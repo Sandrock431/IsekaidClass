@@ -1,0 +1,20 @@
+[
+  {
+    "Key": "SorcererFeatures.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sorcerer Features"
+  },
+  {
+    "Key": "SorcererFeatures.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of sorcerer DNA, allowing them to channel the same powers."
+  },
+  {
+    "Key": "SorcererFeatures.SorcererClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sorcerer Infusion"
+  },
+  {
+    "Key": "SorcererFeatures.SorcererClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of sorcerer DNA, allowing them to channel the same powers."
+  }
+]

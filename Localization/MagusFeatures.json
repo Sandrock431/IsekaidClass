@@ -1,0 +1,258 @@
+[
+  {
+    "Key": "MagusFeatures.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magus Features"
+  },
+  {
+    "Key": "MagusFeatures.Description",
+    "enGB": "As one of their cheats, the isekai'd was given the knowledge to enhance their weapons and fight like a sword saint"
+  },
+  {
+    "Key": "MagusFeatures.MagusClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magus Infusion"
+  },
+  {
+    "Key": "MagusFeatures.MagusClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a magus's flexible arcane knowledge, allowing them to apply the same powers."
+  },
+  {
+    "Key": "MagusFeatures.ArcanePool.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcane Pool"
+  },
+  {
+    "Key": "MagusFeatures.ArcanePool.Description",
+    "enGB": "At 1st level, the isekai'd gains a reservoir of mystical arcane energy that he can draw upon to fuel his powers and enhance his weapon. This arcane pool has a number of points equal to 1/2 his isekai'd level (minimum 1) + his {g|Encyclopedia:Charisma}Charisma{/g} modifier. The pool refreshes once per day when the isekai'd prepares his {g|Encyclopedia:Spell}spells{/g}.\n At 1st level, an isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to grant any weapon he is holding a +1 enhancement {g|Encyclopedia:Bonus}bonus{/g} for 1 minute. For every four levels beyond 1st, the weapon gains another +1 enhancement bonus, to a maximum of +5 at 17th level. These bonuses can be added to the weapon, stacking with existing weapon enhancement to a maximum of +5. Multiple uses of this ability do not stack with themselves.\n At 5th level, these bonuses can be used to add any of the following weapon properties: flaming, flaming burst, frost, icy burst, keen, shock, shocking burst, or speed.\n Adding these properties consumes an amount of bonus equal to the property's base price modifier. These properties are added to any the weapon already has, but duplicates do not stack. If the weapon is not magical, at least a +1 enhancement bonus must be added before any other properties can be added. These bonuses and properties are decided when the arcane pool point is spent and cannot be changed until the next time the isekai'd uses this ability. These bonuses do not function if the weapon is wielded by anyone other than the isekai'd.\n A isekai'd can only enhance one weapon in this way at one time. If he uses this ability again, the first use immediately ends.\n"
+  },
+  {
+    "Key": "MagusFeatures.ArcaneWeaponSwitchAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcane Weapon Enhancement"
+  },
+  {
+    "Key": "MagusFeatures.ArcaneWeaponSwitchAbility.Description",
+    "enGB": "At 1st level, an isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to grant any weapon he is holding a +1 enhancement {g|Encyclopedia:Bonus}bonus{/g} for 1 minute. For every four levels beyond 1st, the weapon gains another +1 enhancement bonus, to a maximum of +5 at 17th level. These bonuses can be added to the weapon, stacking with existing weapon enhancement to a maximum of +5. Multiple uses of this ability do not stack with themselves.\n At 5th level, these bonuses can be used to add any of the following weapon properties: flaming, flaming burst, frost, icy burst, keen, shock, shocking burst, or speed.\n Adding these properties consumes an amount of bonus equal to the property's base price modifier. These properties are added to any the weapon already has, but duplicates do not stack. If the weapon is not magical, at least a +1 enhancement bonus must be added before any other properties can be added. These bonuses and properties are decided when the arcane pool point is spent and cannot be changed until the next time the isekai'd uses this ability. These bonuses do not function if the weapon is wielded by anyone other than the isekai'd.\n An isekai'd can only enhance one weapon in this way at one time. If he uses this ability again, the first use immediately ends."
+  },
+  {
+    "Key": "MagusFeatures.ArcaneWeaponSwitchAbility.Duration",
+    "enGB": "1 minute"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magus Arcana"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.Description",
+    "enGB": "As he gains levels, an isekai'd learns arcane secrets tailored to his specific way of blending martial puissance and magical skill. Starting at 3rd level, an isekai'd gains one magus arcana. He gains an additional magus arcana for every three levels of isekai'd attained after 3rd level. Unless specifically noted in an isekai'd arcana's description, an isekai'd cannot select a particular magus arcana more than once."
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.ArcaneAccuracy.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcane Accuracy"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.ArcaneAccuracy.Description",
+    "enGB": "The isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to grant himself an insight {g|Encyclopedia:Bonus}bonus{/g} equal to his {g|Encyclopedia:Charisma}Charisma{/g} bonus on all {g|Encyclopedia:Attack}attack rolls{/g} until the end of his turn."
+  },
+
+  {
+    "Key": "MagusFeatures.ArcanaSelection.ArcaneAccuracyAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcane Accuracy"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.ArcaneAccuracyAbility.Description",
+    "enGB": "The isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to grant himself an insight {g|Encyclopedia:Bonus}bonus{/g} equal to his {g|Encyclopedia:Charisma}Charisma{/g} bonus on all {g|Encyclopedia:Attack}attack rolls{/g} until the end of his turn."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.ArcaneAccuracyAbility.Duration",
+    "enGB": "1 round"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.BaneBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bane Blade"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.BaneBlade.Description",
+    "enGB": "Whenever the isekai'd enchants his weapon using his arcane pool, he may spend 1 additional point from his arcane pool to add the bane special ability to the weapon."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.DevotedBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Devoted Blade"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.DevotedBlade.Description",
+    "enGB": "Whenever the isekai'd enhances his weapon using his arcane pool, he adds the anarchic, axiomatic, holy, or unholy special abilities to the list of available options. An isekai'd may only add one of these abilities if it matches his own {g|Encyclopedia:Alignment}alignment{/g}."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.DimensionStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dimension Strike"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.DimensionStrike.Description",
+    "enGB": "The isekai'd can expend 2 points from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to resolve all of his melee weapon {g|Encyclopedia:Attack}attacks{/g} until the end of his turn as melee {g|Encyclopedia:TouchAttack}touch attacks{/g}."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.EmpoweredArcana.Name",
+    "ProcessTemplates": false,
+    "enGB": "Empowered Magic"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.EmpoweredArcana.Description",
+    "enGB": "The isekai'd can cast three {g|Encyclopedia:Spell}spell{/g} per day as if those spells were modified by the Empower Spell {g|Encyclopedia:Feat}feat{/g}."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.EnduringBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enduring Blade"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.EnduringBlade.Description",
+    "enGB": "Whenever the isekai'd enchants his weapon using his arcane pool, he may spend 1 additional point from his arcane pool to increase the duration of the enchantment to 1 minute per isekai'd level."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.GhostBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ghost Blade"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.GhostBlade.Description",
+    "enGB": "Whenever the isekai'd enhances his weapon using his arcane pool, he adds the brilliant energy and ghost touch special abilities to the list of available options."
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.HastedAssault.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hasted Assault"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.HastedAssault.Description",
+    "enGB": "The isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to move more quickly. This functions as haste, but only targets the isekai'd and lasts for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to the isekai'ds {g|Encyclopedia:Charisma}Charisma{/g} bonus."
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.HastedAssaultAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hasted Assault"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.HastedAssaultAbility.Description",
+    "enGB": "The isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g} to move more quickly. This functions as haste, but only targets the isekai'd and lasts for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to the isekai'ds {g|Encyclopedia:Charisma}Charisma{/g} bonus."
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.HastedAssaultAbility.Duration",
+    "enGB": "A number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to the isekai'ds {g|Encyclopedia:Charisma}Charisma{/g} bonus"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.MaximizedArcana.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maximized Magic"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.MaximizedArcana.Description",
+    "enGB": "The isekai'd can cast three {g|Encyclopedia:Spell}spell{/g} per day as if those spells were modified by the Maximize Spell {g|Encyclopedia:Feat}feat{/g}."
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.PrescientAttack.Name",
+    "ProcessTemplates": false,
+    "enGB": "Prescient Attack"
+  },
+  {
+    "Key": "MagusFeatures.ArcanaSelection.PrescientAttack.Description",
+    "enGB": "The isekai'd can expend 1 point from his arcane pool as a {g|Encyclopedia:Swift_Action}swift action{/g}, allowing him to anticipate his opponent's defenses. Enemies are denied their {g|Encyclopedia:Dexterity}Dexterity{/g} bonus against the magus's {g|Encyclopedia:Attack}attacks{/g} until the end of the isekai'ds next turn."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.QuickenedArcana.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quickened Magic"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.QuickenedArcana.Description",
+    "enGB": "The isekai'd can cast three {g|Encyclopedia:Spell}spell{/g} per day as if those spells were modified by the Quicken Spell {g|Encyclopedia:Feat}feat{/g}."
+  },
+  {
+    "Key": "MagusFeatures.Arcana.ReachArcana.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reach Magic"
+  },
+  {
+    "Key": "MagusFeatures.Arcana.ReachArcana.Description",
+    "enGB": "The isekai'd can cast three {g|Encyclopedia:Spell}spell{/g} per day as if those spells were modified by the Reach Spell {g|Encyclopedia:Feat}feat{/g}."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.CannyDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Canny Defense"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.CannyDefense.Description",
+    "enGB": "An isekai'd adds 1 point of {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) per isekai'd {g|Encyclopedia:Class_Level}class level{/g} as a dodge {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Armor_Class}Armor Class{/g}. If an isekai'd is caught {g|Encyclopedia:Flat_Footed}flat-footed{/g} or otherwise denied their {g|Encyclopedia:Dexterity}Dexterity{/g} bonus, they also loses this bonus."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Perfect Strike"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrike.Description",
+    "enGB": "At 4th level, when an isekai'd hits with his chosen weapon, he can spend 1 point from his arcane pool in order to maximize his weapon {g|Encyclopedia:Damage}damage{/g}. Don't {g|Encyclopedia:Dice}roll{/g} for damage — the weapon deals maximum damage. This affects only the weapon's base damage dice, not additional damage from sneak attack, magical weapon properties, spellstrike, or {g|Encyclopedia:Critical}critical hits{/g}. If the isekai'd confirms a critical hit, he can instead spend 2 points from his arcane pool to increase his weapon's critical multiplier by 1."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrikeAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Perfect Strike"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrikeAbility.Description",
+    "enGB": "At 4th level, when an isekai'd hits with his chosen weapon, he can spend 1 point from his arcane pool in order to maximize his weapon {g|Encyclopedia:Damage}damage{/g}. Don't {g|Encyclopedia:Dice}roll{/g} for damage — the weapon deals maximum damage. This affects only the weapon's base damage dice, not additional damage from sneak attack, magical weapon properties, spellstrike, or {g|Encyclopedia:Critical}critical hits{/g}."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Perfect Critical"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Description",
+    "enGB": "At 4th level, when an isekai'd confirms a {g|Encyclopedia:Critical}critical hit{/g}, he can spend 1 point from his arcane pool to increase his weapon's critical multiplier by 1."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.LightningDraw.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lightning Draw"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.LightningDraw.Description",
+    "enGB": "At 7th level, an isekai'd applies his {g|Encyclopedia:Charisma}Charisma{/g} modifier as well as his {g|Encyclopedia:Dexterity}Dexterity{/g} modifier on {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Dice}rolls{/g} (minimum 0)."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.CriticalPerfection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Critical Perfection"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.CriticalPerfection.Description",
+    "enGB": "At 9th level, an isekai'd adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (minimum 0) on {g|Encyclopedia:Critical}critical hit{/g} confirmation {g|Encyclopedia:Dice}rolls{/g} with his chosen weapon."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.SuperiorReflexes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Superior Reflexes"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.SuperiorReflexes.Description",
+    "enGB": "At 11th level, an isekai'd can make a number of {g|Encyclopedia:Attack_Of_Opportunity}attacks of opportunity{/g} in a {g|Encyclopedia:Combat_Round}round{/g} equal to his {g|Encyclopedia:Intelligence}Charisma{/g} modifier (minimum 1). This effect stacks with the Combat Reflexes {g|Encyclopedia:Feat}feat{/g}."
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.LethalFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lethal Focus"
+  },
+  {
+    "Key": "MagusFeatures.SwordSaint.LethalFocus.Description",
+    "enGB": "At 13th level, when an isekai'd is attacking a {g|Encyclopedia:Flat_Footed}flat-footed{/g} opponent, he adds his {g|Encyclopedia:Charisma}Charisma{/g} modifier on {g|Encyclopedia:Damage}damage{/g} with his chosen weapon (minimum 0)."
+  }
+]

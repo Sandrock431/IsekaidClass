@@ -1,0 +1,20 @@
+[
+  {
+    "Key": "AlchemistFeatures.Name",
+    "ProcessTemplates": false,
+    "enGB": "Alchemist Features"
+  },
+  {
+    "Key": "AlchemistFeatures.Description",
+    "enGB": "As one of their cheats, an isekai'd is granted vast alchemical knowledge."
+  },
+  {
+    "Key": "AlchemistFeatures.AlchemistClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Alchemist Infusion"
+  },
+  {
+    "Key": "AlchemistFeatures.AlchemistClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of alchemist know-how, allowing them to utilize the same techniques."
+  }
+]

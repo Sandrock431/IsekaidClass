@@ -1,0 +1,17 @@
+[
+  {
+    "Key": "Settings.Title",
+    "ProcessTemplates": false,
+    "enGB": "Isekai'd"
+  },
+  {
+    "Key": "Settings.EnableFeature",
+    "ProcessTemplates": false,
+    "enGB": "REQUIRES RESTART\n\nTurning this off prevents the feature from working: characters cannot select this feature and characters with it cannot use it. You can still load save games that reference it."
+  },
+  {
+    "Key": "Settings.MainClass",
+    "ProcessTemplates": false,
+    "enGB": "Enable main class"
+  }
+]

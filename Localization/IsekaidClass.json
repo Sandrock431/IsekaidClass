@@ -1,0 +1,74 @@
+[
+  {
+    "Key": "Isekaid.Name",
+    "ProcessTemplates": false,
+    "enGB": "Isekai'd"
+  },
+  {
+    "Key": "Isekaid.Description",
+    "enGB": "Isekai'd found themselves dropped into another world with the cheat skills to survive."
+  },
+  {
+    "Key": "Isekaid.Proficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Isekai'd Proficiencies"
+  },
+  {
+    "Key": "Isekaid.Proficiencies.Description",
+    "enGB": "Isekai'd are proficient with all simple, martial, and exotic {g|Encyclopedia:Weapon_Proficiency}weapons{/g}, light armor, medium armor, heavy armor, and shields. A medium can cast {g|Encyclopedia:Spell}spells{/g} while wearing any armor."
+  },
+  {
+    "Key": "Isekaid.Cantrips.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidClassCantrips"
+  },
+  {
+    "Key": "Isekaid.Cantrips.Description",
+    "enGB": "Isekai'd can cast a number of {g|Encyclopedia:Cantrips_Orisons}cantrips{/g}, or 0-level {g|Encyclopedia:Spell}spells{/g}. These spells are cast like any other spell, but they are not expended when cast and may be used again."
+  },
+  {
+    "Key": "Isekaid.SpellBook.Name",
+    "ProcessTemplates": false,
+    "enGB": "Isekai'd"
+  },
+  {
+    "Key": "Isekaid.BardClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bard Infusion"
+  },
+  {
+    "Key": "Isekaid.BardClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a bard's song, allowing them to channel the same powers."
+  },
+  {
+    "Key": "Isekaid.DruidClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Druid Infusion"
+  },
+  {
+    "Key": "Isekaid.DruidClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a druid's connection to nature, allowing them to channel the same powers."
+  },
+  {
+    "Key": "Isekaid.MonkClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Monk Infusion"
+  },
+  {
+    "Key": "Isekaid.MonkClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a monk's temparament, allowing them to utilze the same martial arts."
+  },
+  {
+    "Key": "Isekaid.OtherworldlyInitiative.Name",
+    "ProcessTemplates": false,
+    "enGB": "Otherwordly Initative"
+  },
+  {
+    "Key": "Isekaid.OtherworldlyInitiative.Description",
+    "enGB": "Due to their transmigration an isekai'd gains a {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Dice}rolls{/g} equal to 1/2 their isekai'd level. At 20th level, an isekai'ds initiative roll is automatically a natural 19."
+  },
+  {
+    "Key": "Isekaid.WeaponMastery.Description",
+    "enGB": "At 20th level, an isekai'd chooses one weapon, such as the longsword, greataxe, or longbow. Any {g|Encyclopedia:Attack}attacks{/g} made with that weapon automatically confirm all {g|Encyclopedia:Critical}critical{/g} threats and have their {g|Encyclopedia:Damage}damage{/g} multiplier increased by 1 (×2 becomes ×3, for example). In addition, he cannot be disarmed while wielding a weapon of this type."
+  }
+]

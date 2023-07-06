@@ -1,0 +1,336 @@
+﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
+using Kingmaker.Settings;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using System;
+using Utils;
+
+namespace Isekaid.ClassFeatures.Magus.Arcana
+{
+    internal class ArcanaSelection
+    {
+        private static readonly LogWrapper logger = LogWrapper.Get(nameof(ArcanaSelection));
+
+        private static readonly string FeatureName = "ArcanaSelection";
+        internal const string DisplayName = "MagusFeatures.ArcanaSelection.Name";
+        private static readonly string Description = "MagusFeatures.ArcanaSelection.Description";
+
+        internal static void Configure()
+        {
+            try
+            {
+                if (Settings.IsEnabled(Guids.ArcanaSelection))
+                    ConfigureEnabled();
+                else
+                    ConfigureDisabled();
+            }
+            catch (Exception e)
+            {
+                logger.Error("ArcanaSelection.Configure", e);
+            }
+        }
+
+        public static void ConfigureDisabled()
+        {
+            configureArcaneAccuracy(enabled: false);
+            configureHastedAssault(enabled: false);
+            configurePrescientAttack(enabled: false);
+            FeatureConfigurator.New(FeatureName, Guids.ArcanaSelection).Configure();
+        }
+
+        public static void ConfigureEnabled()
+        {
+            logger.Info("Configuring arcana selection");
+
+            configureArcaneAccuracy(enabled: true);
+            configureHastedAssault(enabled: true);
+            //BaneBlade.Configure();
+            //DevotedBlade.Configure();
+            //DimensionStrike.Configure();
+            //EmpoweredArcana.Configure();
+            //EnduringBlade.Configure();
+            //GhostBlade.Configure();
+            //HastedAssault.Configure();
+            //MaximizedArcana.Configure();
+            configurePrescientAttack(enabled: true);
+            //QuickenedArcana.Configure();
+            //ReachArcana.Configure();
+
+            FeatureSelectionConfigurator.New(FeatureName, Guids.ArcanaSelection)
+                .SetDisplayName(DisplayName)
+                .SetDescription(Description)
+                .SetDescriptionShort("")
+                .SetIcon(FeatureSelectionRefs.MagusArcanaSelection.Reference.Get().Icon)
+                .SetAllowNonContextActions(false)
+                .SetHideInUI(false)
+                .SetHideInCharacterSheetAndLevelUp(false)
+                .SetHideNotAvailibleInUI(false)
+                .SetRanks(1)
+                .SetReapplyOnLevelUp(false)
+                .SetIsClassFeature(true)
+                .SetIgnorePrerequisites(false)
+                .SetObligatory(false)
+                .SetMode(Kingmaker.Blueprints.Classes.Selection.SelectionMode.Default)
+                .SetGroup(FeatureGroup.MagusArcana)
+                .SetGroup2(FeatureGroup.None)
+                .SetAllFeatures(new Blueprint<Kingmaker.Blueprints.BlueprintFeatureReference>[]
+                {
+                    Guids.ArcaneAccuracy,
+                    //Guids.BaneBlade,
+                    FeatureRefs.BaneBladeFeature.Reference.Get(),
+                    //Guids.DevotedBlade,
+                    FeatureRefs.DevotedBladeFeature.Reference.Get(),
+                    //Guids.DimensionStrike,
+                    FeatureRefs.DimensionStrikeFeature.Reference.Get(),
+                    //Guids.EmpoweredArcana,
+                    FeatureRefs.EmpoweredArcanaFeature.Reference.Get(),
+                    //Guids.EnduringBlade,
+                    FeatureRefs.EnduringBladeFeature.Reference.Get(),
+                    FeatureRefs.ExtendedArcanaFeature.Reference.Get(),
+                    //Guids.GhostBlade,
+                    FeatureRefs.GhostBladeFeature.Reference.Get(),
+                    Guids.HastedAssault,
+                    //Guids.MaximizedArcana,
+                    FeatureRefs.MaximizedArcanaFeature.Reference.Get(),
+                    Guids.PrescientAttack,
+                    //Guids.QuickenedArcana,
+                    FeatureRefs.QuickenedArcanaFeature.Reference.Get(),
+                    //Guids.ReachArcana,
+                    FeatureRefs.ReachArcanaFeature.Reference.Get()
+                })
+                .Configure();
+        }
+
+        private static void configureArcaneAccuracy(bool enabled)
+        {
+            logger.Info("   Configuring arcane accuracy");
+
+            string name = "ArcaneAccuracy";
+            string description = "MagusFeatures.ArcanaSelection.ArcaneAccuracy.Description";
+
+            if (!enabled)
+            {
+                configureArcaneAccuracyAbility(enabled:  false);
+
+                FeatureConfigurator.New(name, Guids.ArcaneAccuracy).Configure();
+                return;
+            }
+
+            configureArcaneAccuracyAbility(enabled: true);
+
+            FeatureConfigurator.New(name, Guids.ArcaneAccuracy)
+                .CopyFrom(FeatureRefs.ArcaneAccuracyFeature.Reference.Get())
+                .SetDescription(description)
+                .AddFacts(
+                    facts: new() { Guids.ArcaneAccuracyAbility },
+                    casterLevel: 0,
+                    doNotRestoreMissingFacts: false,
+                    hasDifficultyRequirements: false,
+                    invertDifficultyRequirements: false,
+                    minDifficulty: GameDifficultyOption.Story
+                )
+                .Configure();
+        }
+
+        private static void configureArcaneAccuracyAbility(bool enabled)
+        {
+            logger.Info("       Configuring arcane accuracy ability");
+
+            string name = "ArcaneAccuracyAbility";
+            string description = "MagusFeatures.ArcanaSelection.ArcaneAccuracyAbility.Description";
+
+            if (!enabled)
+            {
+                AbilityConfigurator.New(name, Guids.ArcaneAccuracyAbility).Configure();
+                return;
+            }
+
+            AbilityConfigurator.New(name, Guids.ArcaneAccuracyAbility)
+                .CopyFrom(
+                    blueprint: AbilityRefs.ArcaneAccuracyAbility.Reference.Get(),
+                    componentTypes: new[]
+                    {
+                        typeof(AbilityEffectRunAction),
+                        typeof(AbilitySpawnFx),
+                        typeof(ContextCalculateSharedValue)
+                    } 
+                )
+                .SetDescription(description)
+                .AddAbilityResourceLogic(
+                    requiredResource: Guids.ArcanePoolResource,
+                    amount: 1,
+                    costIsCustom: false,
+                    isSpendResource: true,
+                    resourceCostIncreasingFacts: new()
+                )
+                .AddContextRankConfig(
+                    component: ContextRankConfigs.StatBonus(
+                        stat: StatType.Charisma,
+                        type: AbilityRankType.Default,
+                        min: 0,
+                        max: 20
+                    )
+                ).Configure();
+        }
+
+        private static void configureHastedAssault(bool enabled)
+        {
+            logger.Info("   Configuring hasted assault");
+
+            string name = "HastedAssault";
+            string description = "MagusFeatures.ArcanaSelection.HastedAssault.Description";
+
+            if (!enabled)
+            {
+                configureHastedAssaultAbility(enabled: false);
+
+                FeatureConfigurator.New(name, Guids.HastedAssault).Configure();
+                return;
+            }
+
+            configureHastedAssaultAbility(enabled: true);
+
+            FeatureConfigurator.New(name, Guids.HastedAssault)
+                .CopyFrom(
+                    blueprint: FeatureRefs.HastedAssaultFeature.Reference.Get(),
+                    componentTypes: new[]
+                    {
+                        typeof(PrerequisiteClassLevel)
+                    } 
+                )
+                .SetDescription(description)
+                .AddFacts(
+                    facts: new() { Guids.HastedAssaultAbility },
+                    casterLevel: 0,
+                    doNotRestoreMissingFacts: false,
+                    hasDifficultyRequirements: false,
+                    invertDifficultyRequirements: false,
+                    minDifficulty: GameDifficultyOption.Story
+                )
+                .Configure();
+        }
+
+        private static void configureHastedAssaultAbility(bool enabled)
+        {
+            logger.Info("       Configuring hasted assault ability");
+
+            string name = "HastedAssaultAbility";
+            string description = "MagusFeatures.ArcanaSelection.HastedAssaultAbility.Description";
+
+            if (!enabled)
+            {
+                AbilityConfigurator.New(name, Guids.HastedAssaultAbility).Configure();
+                return;
+            }
+
+            AbilityConfigurator.New(name, Guids.HastedAssaultAbility)
+                .CopyFrom(
+                    blueprint: AbilityRefs.HastedAssaultAbility.Reference.Get(),
+                    componentTypes: new[]
+                    {
+                        typeof(AbilityEffectRunAction),
+                        typeof(AbilitySpawnFx),
+                        typeof(ContextCalculateSharedValue)
+                    }
+                )
+                .SetDescription(description)
+                .SetLocalizedDuration("MagusFeatures.ArcanaSelection.HastedAssaultAbility.Duration")
+                .AddAbilityResourceLogic(
+                    requiredResource: Guids.ArcanePoolResource,
+                    amount: 1,
+                    costIsCustom: false,
+                    isSpendResource: true,
+                    resourceCostIncreasingFacts: new()
+                )
+                .AddContextRankConfig(
+                    component: ContextRankConfigs.StatBonus(
+                        stat: StatType.Charisma,
+                        type: AbilityRankType.Default,
+                        min: 0,
+                        max: 20
+                    )
+                ).Configure();
+        }
+
+        private static void configurePrescientAttack(bool enabled)
+        {
+            logger.Info("   Configuring prescient attack");
+
+            string name = "PrescientAttack";
+            string description = "MagusFeatures.ArcanaSelection.PrescientAttack.Description";
+
+            if (!enabled)
+            {
+                configurePrescientAttackAbility(enabled: false);
+
+                FeatureConfigurator.New(name, Guids.PrescientAttack).Configure();
+                return;
+            }
+
+            configurePrescientAttackAbility(enabled: true);
+
+            FeatureConfigurator.New(name, Guids.PrescientAttack)
+                .CopyFrom(
+                    blueprint: FeatureRefs.PrescientAttackFeature.Reference.Get(),
+                    componentTypes: new[]
+                    {
+                        typeof(PrerequisiteClassLevel)
+                    }
+                )
+                .SetDescription(description)
+                .AddFacts(
+                    facts: new() { Guids.PrescientAttackAbility },
+                    casterLevel: 0,
+                    doNotRestoreMissingFacts: false,
+                    hasDifficultyRequirements: false,
+                    invertDifficultyRequirements: false,
+                    minDifficulty: GameDifficultyOption.Story
+                )
+                .Configure();
+        }
+
+        private static void configurePrescientAttackAbility(bool enabled)
+        {
+            logger.Info("       Configuring prescient attack ability");
+
+            string name = "PrescientAttackAbility";
+            string description = "MagusFeatures.ArcanaSelection.PrescientAttackAbility.Description";
+
+            if (!enabled)
+            {
+                FeatureConfigurator.New(name, Guids.PrescientAttackAbility).Configure();
+                return;
+            }
+
+            AbilityConfigurator.New(name, Guids.PrescientAttackAbility)
+                .CopyFrom(
+                    blueprint: AbilityRefs.PrescientAttackAbility.Reference.Get(),
+                    componentTypes: new[]
+                    {
+                        typeof(AbilityEffectRunAction),
+                        typeof(AbilitySpawnFx),
+                        typeof(ContextCalculateSharedValue)
+                    }
+                )
+                .SetDescription(description)
+                .AddAbilityResourceLogic(
+                    requiredResource: Guids.ArcanePoolResource,
+                    amount: 1,
+                    costIsCustom: false,
+                    isSpendResource: true,
+                    resourceCostIncreasingFacts: new()
+                )
+                .Configure();
+        }
+    }
+}

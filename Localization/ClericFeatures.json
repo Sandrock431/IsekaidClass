@@ -1,0 +1,20 @@
+[
+  {
+    "Key": "ClericFeatures.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cleric Features"
+  },
+  {
+    "Key": "ClericFeatures.Description",
+    "enGB": "As one of their cheats, the over-god of Golarion granted the isekai'd their full divine support, the same as their clerics"
+  },
+  {
+    "Key": "ClericFeatures.ClericClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cleric Infusion"
+  },
+  {
+    "Key": "ClericFeatures.ClericClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a cleric's divine connection, allowing them to channel the same power."
+  }
+]

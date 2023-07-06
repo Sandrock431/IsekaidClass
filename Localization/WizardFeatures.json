@@ -1,0 +1,144 @@
+[
+  {
+    "Key": "WizardFeatures.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wizard Features"
+  },
+  {
+    "Key": "WizardFeatures.Description",
+    "enGB": "As one of their cheats, the isekai'd is granted arcane knowledge to further hone their newfound power."
+  },
+  {
+    "Key": "WizardFeatures.WizardClassLevels.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wizard Infusion"
+  },
+  {
+    "Key": "WizardFeatures.WizardClassLevels.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a wizard's arcane knowledge, allowing them to utilize the same powers."
+  },
+  {
+    "Key": "WizardFeatures.SpecialistSchoolSelection.Name",
+    "enGB": "Specialist School"
+  },
+  {
+    "Key": "WizardFeatures.SpecialistSchoolSelection.Description",
+    "enGB": "An isekai'd can choose to specialize in one {g|Encyclopedia:Magic_School}school of magic{/g}, gaining additional powers based on that school. This choice must be made at 1st level, and once made, it cannot be changed. An isekai'd that does not select a school receives the universalist school instead."
+  },
+  {
+    "Key": "WizardFeatures.AbjurationSpecialization.Description",
+    "enGB": "The abjurer uses magic against itself, and masters the art of defensive and warding magics.\n Resistance: You gain resistance 5 to an energy type of your choice, chosen when you prepare {g|Encyclopedia:Spell}spells{/g}. This resistance can be changed each day. At 11th level, this resistance increases to 10. At 20th level, this resistance changes to immunity to the chosen energy type.\n Protective Ward: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can create a 10-foot-radius field of protective magic centered on you that lasts for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier. All allies in this area (including you) receive a +1 deflection {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Armor_Class}Armor Class{/g}. This bonus increases by +1 for every five isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your Charisma modifier.\n Energy Absorption: At 6th level, you gain an amount of energy absorption equal to 3 times your isekai'd level per day. Whenever you take {g|Encyclopedia:Energy_Damage}energy damage{/g}, apply immunity, vulnerability (if any), and resistance first and apply the rest to this absorption, reducing your daily total by that amount. Any {g|Encyclopedia:Damage}damage{/g} in excess of your absorption is applied to you normally."
+  },
+  {
+    "Key": "WizardFeatures.AbjurationSpecialization.AbjurationSpecializationFeature.Description",
+    "enGB": "The abjurer uses magic against itself, and masters the art of defensive and warding magics.\n Resistance: You gain resistance 5 to an energy type of your choice, chosen when you prepare {g|Encyclopedia:Spell}spells{/g}. This resistance can be changed each day. At 11th level, this resistance increases to 10. At 20th level, this resistance changes to immunity to the chosen energy type.\n Protective Ward: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can create a 10-foot-radius field of protective magic centered on you that lasts for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier. All allies in this area (including you) receive a +1 deflection {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Armor_Class}Armor Class{/g}. This bonus increases by +1 for every five isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your Charisma modifier."
+  },
+  {
+    "Key": "WizardFeatures.AbjurationSpecialization.ProtectiveWard.Description",
+    "enGB": "As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can create a 10-foot-radius field of protective magic centered on you that lasts for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to your {g|Encyclopedia:Charisma}Charisma{/g} modifier. All allies in this area (including you) receive a +1 deflection {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:Armor_Class}Armor Class{/g}. This bonus increases by +1 for every five isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your Charisma modifier."
+  },
+  {
+    "Key": "WizardFeatures.AbjurationSpecialization.EnergyResistance.Description",
+    "enGB": "At 6th level, you gain an amount of energy absorption equal to 3 times your isekai'd level per day. Whenever you take {g|Encyclopedia:Energy_Damage}energy damage{/g} apply the rest to this absorption, reducing your daily total by that amount. Any {g|Encyclopedia:Damage}damage{/g} in excess of your absorption is applied to you normally."
+  },
+  {
+    "Key": "WizardFeatures.ConjurationSpecialization.Description",
+    "enGB": "The conjurer focuses on the study of summoning monsters and magic alike to bend to his will.\n Summoner's Charm: Whenever you cast a conjuration (summoning) {g|Encyclopedia:Spell}spell{/g}, increase the duration by a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to 1/2 your isekai'd level (minimum 1). This increase is not doubled by Extend Spell.\n Acid Dart: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash an acid dart targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The acid dart deals {g|Encyclopedia:Dice}1d6{/g} points of {g|Encyclopedia:Energy_Damage}acid damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier. This {g|Encyclopedia:Attack}attack{/g} ignores {g|Encyclopedia:Spell_Resistance}spell resistance{/g}.\n Dimensional Steps: At 8th level, you can use this ability to teleport up to 30 feet as a {g|Encyclopedia:Move_Action}move action{/g}. You can use this ability a total number of times per day equal to your isekai'd level."
+  },
+  {
+    "Key": "WizardFeatures.ConjurationSpecialization.ConjurationSpecializationFeature.Description",
+    "enGB": "The conjurer focuses on the study of summoning monsters and magic alike to bend to his will.\n Summoner's Charm: Whenever you cast a conjuration (summoning) {g|Encyclopedia:Spell}spell{/g}, increase the duration by a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to 1/2 your isekai'd level (minimum 1). This increase is not doubled by Extend Spell.\n Acid Dart: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash an acid dart targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The acid dart deals {g|Encyclopedia:Dice}1d6{/g} points of {g|Encyclopedia:Energy_Damage}acid damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier. This {g|Encyclopedia:Attack}attack{/g} ignores {g|Encyclopedia:Spell_Resistance}spell resistance{/g}."
+  },
+  {
+    "Key": "WizardFeatures.ConjurationSpecialization.AcidDart.Description",
+    "enGB": "As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash an acid dart targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The acid dart deals {g|Encyclopedia:Dice}1d6{/g} points of {g|Encyclopedia:Energy_Damage}acid damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier. This {g|Encyclopedia:Attack}attack{/g} ignores {g|Encyclopedia:Spell_Resistance}spell resistance{/g}."
+  },
+  {
+    "Key": "WizardFeatures.ConjurationSpecialization.DimensionalSteps.Description",
+    "enGB": "At 8th level, you can use this ability to teleport up to 30 feet as a {g|Encyclopedia:Move_Action}move action{/g}. You can use this ability a total number of times per day equal to your isekai'd level."
+  },
+  {
+    "Key": "WizardFeatures.DivinationSpecialization.Description",
+    "enGB": "Diviners are masters of remote viewing, prophecies, and using magic to explore the world.\n Forewarned: You receive a {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to 1/2 your isekai'd level (minimum +1). At 20th level, anytime you {g|Encyclopedia:Dice}roll{/g} initiative, assume the roll resulted in a natural 20.\n Diviner's Fortune: When you activate this school power, you can touch any creature as a {g|Encyclopedia:Standard_Actions}standard action{/g} to give it an insight bonus on all of its {g|Encyclopedia:Attack}attack rolls{/g}, {g|Encyclopedia:Skills}skill checks{/g}, {g|Encyclopedia:Ability_Scores}ability checks{/g}, and {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to 1/2 your isekai'd level (minimum +1) for 1 {g|Encyclopedia:Combat_Round}round{/g}. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier.\n Foretell: At 8th level, you can utter a prediction of the immediate future. While your foretelling is in effect, you emit a 30-foot aura of fortune that aids your allies or hinders your enemies, as chosen by you at the time of prediction. If you choose to aid, you and your allies gain a +2 luck bonus on ability checks, attack rolls, {g|Encyclopedia:Caster_Level}caster level{/g} checks, saving throws, and skill checks. If you choose to hinder, your enemies take a �2 {g|Encyclopedia:Penalty}penalty{/g} on those rolls instead. You can use this ability for a number of rounds per day equal to your isekai'd level. These rounds do not need to be consecutive."
+  },
+  {
+    "Key": "WizardFeatures.DivinationSpecializationFeature.Description",
+    "enGB": "Diviners are masters of remote viewing, prophecies, and using magic to explore the world.\n Forewarned: You receive a {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Check}checks{/g} equal to 1/2 your isekai'd level (minimum +1). At 20th level, anytime you {g|Encyclopedia:Dice}roll{/g} initiative, assume the roll resulted in a natural 20.\n Diviner's Fortune: When you activate this school power, you can touch any creature as a {g|Encyclopedia:Standard_Actions}standard action{/g} to give it an insight bonus on all of its {g|Encyclopedia:Attack}attack rolls{/g}, {g|Encyclopedia:Skills}skill checks{/g}, {g|Encyclopedia:Ability_Scores}ability checks{/g}, and {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to 1/2 your isekai'd level (minimum +1) for 1 {g|Encyclopedia:Combat_Round}round{/g}. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.DivinationSpecialization.BaseDivinationAbility.Description",
+    "enGB": "When you activate this school power, you can touch any creature as a {g|Encyclopedia:Standard_Actions}standard action{/g} to give it an insight bonus on all of its {g|Encyclopedia:Attack}attack rolls{/g}, {g|Encyclopedia:Skills}skill checks{/g}, {g|Encyclopedia:Ability_Scores}ability checks{/g}, and {g|Encyclopedia:Saving_Throw}saving throws{/g} equal to 1/2 your isekai'd level (minimum +1) for 1 {g|Encyclopedia:Combat_Round}round{/g}. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.DivinationSpecialization.GreaterDivinationAbility.Description",
+    "enGB": "At 8th level, you can utter a prediction of the immediate future. While your foretelling is in effect, you emit a 30-foot aura of fortune that aids your allies or hinders your enemies, as chosen by you at the time of prediction. If you choose to aid, you and your allies gain a +2 luck bonus on ability checks, attack rolls, {g|Encyclopedia:Caster_Level}caster level{/g} checks, saving throws, and skill checks. If you choose to hinder, your enemies take a �2 {g|Encyclopedia:Penalty}penalty{/g} on those rolls instead. You can use this ability for a number of rounds per day equal to your isekai'd level. These rounds do not need to be consecutive."
+  },
+  {
+    "Key": "WizardFeatures.EnchantmentSpecialization.Description",
+    "enGB": "The enchanter uses magic to control and manipulate the minds of his victims.\n Enchanting Smile: You gain a +2 enhancement {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Persuasion}Persuasion checks{/g} and {g|Encyclopedia:Saving_Throw}saving throws{/g} against Enchantment {g|Encyclopedia:Spell}spells{/g}. This bonus increases by +1 for every five isekai'd levels you possess, up to a maximum of +6 at 20th level.\n Dazing Touch: You can cause a living creature to become dazed for 1 {g|Encyclopedia:Combat_Round}round{/g} as a melee {g|Encyclopedia:TouchAttack}touch attack{/g}. Creatures with more {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level are unaffected. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier.\n Aura of Despair: At 8th level, you can emit a 30-foot aura of despair for a number of rounds per day equal to your isekai'' level. Enemies within this aura take a �2 {g|Encyclopedia:Penalty}penalty{/g} on {g|Encyclopedia:Ability_Scores}ability checks{/g}, {g|Encyclopedia:Attack}attack rolls{/g}, {g|Encyclopedia:Damage}damage rolls{/g}, saving throws, and {g|Encyclopedia:Skills}skill checks{/g}. These rounds do not need to be consecutive. This is a mind-affecting effect."
+  },
+  {
+    "Key": "WizardFeatures.EnchantmentSpecialization.EnchantmentSpecializationFeature.Description",
+    "enGB": "The enchanter uses magic to control and manipulate the minds of his victims.\n Enchanting Smile: You gain a +2 enhancement {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Persuasion}Persuasion checks{/g} and {g|Encyclopedia:Saving_Throw}saving throws{/g} against Enchantment {g|Encyclopedia:Spell}spells{/g}. This bonus increases by +1 for every five isekai'd levels you possess, up to a maximum of +6 at 20th level.\n Dazing Touch: You can cause a living creature to become dazed for 1 {g|Encyclopedia:Combat_Round}round{/g} as a melee {g|Encyclopedia:TouchAttack}touch attack{/g}. Creatures with more {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level are unaffected. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.EnchantmentSpecialization.BaseEnchantmentAbility.Description",
+    "enGB": "You can cause a living creature to become dazed for 1 {g|Encyclopedia:Combat_Round}round{/g} as a melee {g|Encyclopedia:TouchAttack}touch attack{/g}. Creatures with more {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your wizard level are unaffected. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.EnchantmentSpecialization.GreaterEnchantmentAbility.Description",
+    "enGB": "At 8th level, you can emit a 30-foot aura of despair for a number of rounds per day equal to your isekai'd level. Enemies within this aura take a �2 {g|Encyclopedia:Penalty}penalty{/g} on {g|Encyclopedia:Ability_Scores}ability checks{/g}, {g|Encyclopedia:Attack}attack rolls{/g}, {g|Encyclopedia:Damage}damage rolls{/g}, saving throws, and {g|Encyclopedia:Skills}skill checks{/g}. These rounds do not need to be consecutive. This is a mind-affecting effect."
+  },
+  {
+    "Key": "WizardFeatures.EvocationSpecialization.Description",
+    "enGB": "Evokers revel in the raw power of magic, and can use it to create and destroy with shocking ease.\n Intense Spells: Whenever you cast an evocation {g|Encyclopedia:Spell}spell{/g} that deals hit point {g|Encyclopedia:Damage}damage{/g}, add 1/2 your isekai'd level to the damage (minimum +1). This {g|Encyclopedia:Bonus}bonus{/g} only applies once to a spell, not once per missile or ray, and cannot be split between multiple missiles or rays. This damage is of the same type as the spell. At 20th level, whenever you cast an Evocation spell, you can {g|Encyclopedia:Dice}roll{/g} twice to penetrate a creature's {g|Encyclopedia:Spell_Resistance}spell resistance{/g} and take the better result.\n Force Missile: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash a force missile that automatically strikes a foe, as magic missile. The force missile deals 1d4 points of damage plus the damage from your intense spells evocation power. This is a force effect. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier.\n Elemental Wall: At 8th level, one per day you can create a wall of energy. You can choose fire, cold, acid or {g|Encyclopedia:Energy_Damage}electricity damage{/g}. The elemental wall otherwise functions like wall of fire. At 12th level and every 4 levels thereafter, you can use this ability one additional time per day, to a maximum of 4 times at level 20."
+  },
+  {
+    "Key": "WizardFeatures.EvocationSpecialization.EvocationSpecializationFeature.Description",
+    "enGB": "Evokers revel in the raw power of magic, and can use it to create and destroy with shocking ease.\n Intense Spells: Whenever you cast an evocation {g|Encyclopedia:Spell}spell{/g} that deals hit point {g|Encyclopedia:Damage}damage{/g}, add 1/2 your isekai'd level to the damage (minimum +1). This {g|Encyclopedia:Bonus}bonus{/g} only applies once to a spell, not once per missile or ray, and cannot be split between multiple missiles or rays. This damage is of the same type as the spell. At 20th level, whenever you cast an Evocation spell, you can {g|Encyclopedia:Dice}roll{/g} twice to penetrate a creature's {g|Encyclopedia:Spell_Resistance}spell resistance{/g} and take the better result.\n Force Missile: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash a force missile that automatically strikes a foe, as magic missile. The force missile deals 1d4 points of damage plus the damage from your intense spells evocation power. This is a force effect. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.EvocationSpecialization.ForceMissile.Description",
+    "enGB": "Force Missile: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can unleash a force missile that automatically strikes a foe, as magic missile. The force missile deals 1d4 points of damage plus the damage from your intense spells evocation power. This is a force effect. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.IllusionSpecialization.Description",
+    "enGB": "Illusionists use magic to weave confounding images, figments, and phantoms to baffle and vex their foes.\n Blinding Ray : As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can fire a shimmering ray at any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The ray causes creatures to be blinded for 1 {g|Encyclopedia:Combat_Round}round{/g}. Creatures with more {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level are dazzled for 1 round instead. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier.\n Invisibility Field : At 8th level, you can make yourself Invisible as a {g|Encyclopedia:Swift_Action}swift action{/g} for a number of rounds per day equal to your isekai'd level. These rounds do not need to be consecutive. This otherwise functions as greater invisibility."
+  },
+  {
+    "Key": "WizardFeatures.IllusionSpecialization.IllusionSpecializationFeature.Description",
+    "enGB": "As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can fire a shimmering ray at any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The ray causes creatures to be blinded for 1 {g|Encyclopedia:Combat_Round}round{/g}. Creatures with more {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level are dazzled for 1 round instead. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.IllusionSpecialization.GreaterIllusionAbility.Description",
+    "enGB": "At 8th level, you can make yourself Invisible as a {g|Encyclopedia:Swift_Action}swift action{/g} for a number of rounds per day equal to your isekai'd level. These rounds do not need to be consecutive. This otherwise functions as greater invisibility."
+  },
+  {
+    "Key": "WizardFeatures.NecromancySpecialization.Description",
+    "enGB": "The dread and feared necromancer commands undead and uses the foul power of unlife against his enemies.\n Power over Undead: You receive Turn Undead as a bonus {g|Encyclopedia:Feat}feat{/g}. At 20th level, undead cannot add their channel resistance to the save against this ability.\n Grave Touch: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can make a melee {g|Encyclopedia:TouchAttack}touch attack{/g} that causes a living creature to become shaken for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to 1/2 your isekai'd level level (minimum 1). If you touch a shaken creature with this ability, it becomes frightened for 1 round if it has fewer {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level level. You can use this ability a number of times per day equal to 3 + your Charisma modifier.\n Life Sight: At 8th level, you gain blindsight to a range of 10 feet for a number of rounds per day equal to your isekai'd level level. This ability only allows you to detect living creatures and undead creatures. This sight also tells you whether a creature is living or undead. Constructs and other creatures that are neither living nor undead cannot be seen with this ability. The range of this ability increases by 10 feet at 12th level, and by an additional 10 feet for every four levels beyond 12th. These rounds do not need to be consecutive."
+  },
+  {
+    "Key": "WizardFeatures.NecromancySpecialization.NecromancySpecializationFeature.Description",
+    "enGB": "Power over Undead: You receive Turn Undead as a bonus {g|Encyclopedia:Feat}feat{/g}. At 20th level, undead cannot add their channel resistance to the save against this ability.\n Grave Touch: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can make a melee {g|Encyclopedia:TouchAttack}touch attack{/g} that causes a living creature to become shaken for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to 1/2 your isekai'd level level (minimum 1). If you touch a shaken creature with this ability, it becomes frightened for 1 round if it has fewer {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level level. You can use this ability a number of times per day equal to 3 + your Charisma modifier."
+  },
+  {
+    "Key": "WizardFeatures.NecromancySpecialization.BaseNecromancyAbility.Description",
+    "enGB": "As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can make a melee {g|Encyclopedia:TouchAttack}touch attack{/g} that causes a living creature to become shaken for a number of {g|Encyclopedia:Combat_Round}rounds{/g} equal to 1/2 your isekai'd level level (minimum 1). If you touch a shaken creature with this ability, it becomes frightened for 1 round if it has fewer {g|Encyclopedia:Hit_Dice}Hit Dice{/g} than your isekai'd level level. You can use this ability a number of times per day equal to 3 + your Charisma modifier."
+  },
+  {
+    "Key": "WizardFeatures.NecromancySpecialization.GreaterNecromancyAbility.Description",
+    "enGB": "At 8th level, you gain blindsight to a range of 10 feet for a number of rounds per day equal to your isekai'd level level. This ability only allows you to detect living creatures and undead creatures. This sight also tells you whether a creature is living or undead. Constructs and other creatures that are neither living nor undead cannot be seen with this ability. The range of this ability increases by 10 feet at 12th level, and by an additional 10 feet for every four levels beyond 12th. These rounds do not need to be consecutive."
+  },
+  {
+    "Key": "WizardFeatures.TransmutationSpecialization.Description",
+    "enGB": "Transmuters use magic to change the world around them.\n Physical Enhancement: You gain a +1 enhancement {g|Encyclopedia:Bonus}bonus{/g} to one physical {g|Encyclopedia:Ability_Scores}ability score{/g} ({g|Encyclopedia:Strength}Strength{/g}, {g|Encyclopedia:Dexterity}Dexterity{/g}, or {g|Encyclopedia:Constitution}Constitution{/g}). This bonus increases by +1 for every five isekai'd levels you possess to a maximum of +5 at 20th level. At 20th level, this bonus applies to two physical ability scores of your choice.\n Telekinetic Fist: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can strike with a telekinetic fist, targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The telekinetic fist deals {g|Encyclopedia:Dice}1d4{/g} points of {g|Encyclopedia:Damage_Type}bludgeoning damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier.\n Change Shape: At 8th level, you can change your shape for a number of {g|Encyclopedia:Combat_Round}rounds{/g} per day equal to your isekai'd level. These rounds do not need to be consecutive. This ability otherwise functions like beast shape II or elemental body I. At 12th level, this ability functions like beast shape III or elemental body II"
+  },
+  {
+    "Key": "WizardFeatures.TransmutationSpecialization.TransmutationSpecializationFeature.Description",
+    "enGB": "Physical Enhancement: You gain a +1 enhancement {g|Encyclopedia:Bonus}bonus{/g} to one physical {g|Encyclopedia:Ability_Scores}ability score{/g} ({g|Encyclopedia:Strength}Strength{/g}, {g|Encyclopedia:Dexterity}Dexterity{/g}, or {g|Encyclopedia:Constitution}Constitution{/g}). This bonus increases by +1 for every five isekai'd levels you possess to a maximum of +5 at 20th level. At 20th level, this bonus applies to two physical ability scores of your choice.\n Telekinetic Fist: As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can strike with a telekinetic fist, targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The telekinetic fist deals {g|Encyclopedia:Dice}1d4{/g} points of {g|Encyclopedia:Damage_Type}bludgeoning damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "WizardFeatures.TransmutationSpecialization.TelekineticFist.Description",
+    "enGB": "As a {g|Encyclopedia:Standard_Actions}standard action{/g}, you can strike with a telekinetic fist, targeting any foe within 30 feet as a ranged {g|Encyclopedia:TouchAttack}touch attack{/g}. The telekinetic fist deals {g|Encyclopedia:Dice}1d4{/g} points of {g|Encyclopedia:Damage_Type}bludgeoning damage{/g} + 1 for every two isekai'd levels you possess. You can use this ability a number of times per day equal to 3 + your {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  }
+]
