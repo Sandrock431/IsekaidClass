@@ -1,17 +1,22 @@
 [
   {
-    "Key": "Settings.Title",
+    "Key": "IsekaidClass.Settings.Title",
     "ProcessTemplates": false,
     "enGB": "Isekai'd"
   },
   {
-    "Key": "Settings.EnableFeature",
+    "Key": "IsekaidClass.Settings.EnableFeature",
     "ProcessTemplates": false,
     "enGB": "REQUIRES RESTART\n\nTurning this off prevents the feature from working: characters cannot select this feature and characters with it cannot use it. You can still load save games that reference it."
   },
   {
-    "Key": "Settings.MainClass",
+    "Key": "IsekaidClass.Settings.MainClass",
     "ProcessTemplates": false,
     "enGB": "Enable main class"
+  },
+  {
+    "Key": "IsekaidClass.Settings.ClassFeatures.Header",
+    "ProcessTemplates": false,
+    "enGB": "Class Features"
   }
 ]

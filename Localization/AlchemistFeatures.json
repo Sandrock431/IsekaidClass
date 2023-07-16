@@ -11,10 +11,118 @@
   {
     "Key": "AlchemistFeatures.AlchemistClassLevels.Name",
     "ProcessTemplates": false,
+    "enGB": "AlchemistClassLevels"
+  },
+  {
+    "Key": "AlchemistFeatures.AlchemistClassLevels.DisplayName",
+    "ProcessTemplates": false,
     "enGB": "Alchemist Infusion"
   },
   {
     "Key": "AlchemistFeatures.AlchemistClassLevels.Description",
     "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of alchemist know-how, allowing them to utilize the same techniques."
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidBombs"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.DisplayName",
+    "ProcessTemplates": false,
+    "enGB": "Isekai'd Bombs"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.Description",
+    "enGB": "In addition to magical extracts, isekai'd are adept at swiftly mixing various volatile chemicals and infusing them with their magical reserves to create powerful bombs that they can hurl at their enemies. An isekai'd can use a number of bombs each day equal to their {g|Encyclopedia:Class_Level}class level{/g} + their {g|Encyclopedia:Charisma}Charisma{/g} modifier.\nThrown bombs have a range of 30 feet and use the Throw Splash Weapon special {g|Encyclopedia:Attack}attack{/g}. Bombs are considered weapons and can be selected using {g|Encyclopedia:Feat}feats{/g} such as Point-Blank Shot and Weapon Focus. On a direct hit, an isekai'ds bomb inflicts {g|Encyclopedia:Dice}1d6{/g} points of {g|Encyclopedia:Energy_Damage}fire damage{/g} + additional {g|Encyclopedia:Damage}damage{/g} equal to the isekai'ds Charisma modifier. The damage of an isekai'ds bomb increases by 1d6 points at every odd-numbered isekai'd level. Splash damage from an isekai'd bomb is always equal to the bomb's minimum damage (so if the bomb would deal 2d6+4 points of fire damage on a direct hit, its splash damage would be 6 points of fire damage). Those caught in the splash damage can attempt a {g|Encyclopedia:Saving_Throw}Reflex save{/g} for half damage. The {g|Encyclopedia:DC}DC{/g} of this save is equal to 10 + 1/2 the isekai'ds level + the isekai'ds Charimsa modifier."
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.BombsFact.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidBombsFact"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.BombsResource.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidBombsResource"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.BombsStandard.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidBombsStandard"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.BombsStandard.Description",
+    "ProcessTemplates": false,
+    "enGB": "On a direct hit, an isekai'ds bomb inflicts {g|Encyclopedia:Dice}1d6{/g} points of {g|Encyclopedia:Energy_Damage}fire damage{/g} + additional {g|Encyclopedia:Damage}damage{/g} equal to the isekai'ds Charisma modifier. The damage of an isekai'ds bomb increases by 1d6 points at every odd-numbered isekai'd level. Splash damage from an isekai'd bomb is always equal to the bomb's minimum damage (so if the bomb would deal 2d6+4 points of fire damage on a direct hit, its splash damage would be 6 points of fire damage). Those caught in the splash damage can attempt a {g|Encyclopedia:Saving_Throw}Reflex save{/g} for half damage. The {g|Encyclopedia:DC}DC{/g} of this save is equal to 10 + 1/2 the isekai'ds level + the isekai'ds Charimsa modifier."
+  },
+  {
+    "Key": "AlchemistFeatures.DiscoverySelection.Description",
+    "enGB": "At 2nd level, and then again every 2 levels thereafter, an isekai'd makes an incredible alchemical discovery. At 20th level, the isekai'd makes an additional discovery. Unless otherwise noted, an isekai'd cannot select an individual discovery more than once. Some discoveries can only be made if the isekai'd has met certain prerequisites first, such as uncovering other discoveries. Only one such discovery can be applied to an individual bomb. The {g|Encyclopedia:DC}DC{/g} of any {g|Encyclopedia:Saving_Throw}saving throw{/g} called for by a discovery is equal to 10 + 1/2 the isekai'ds level + the isekai'ds {g|Encyclopedia:Charisma}Charisma{/g} modifier."
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.DirectedBlastFeature.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidDirectedBlastFeature"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.DirectedBlast.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidDirectedBlast"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.DirectedBlast.Description",
+    "ProcessTemplates": false,
+    "enGB": "At 6th level, an isekai'd can detonate a bomb so that it splashes in a 30-foot cone rather than affecting a radius. The cone starts at the isekai'd and extends away from them in the direction they chooses. Each creature within the cone takes {g|Encyclopedia:Damage}damage{/g} as if it had suffered a direct hit from the isekai'ds bomb, but succeeding at a {g|Encyclopedia:Saving_Throw}Reflex save{/g} ({g|Encyclopedia:DC}DC{/g} = 10 + 1/2 the isekai'ds level + the isekai'ds {g|Encyclopedia:Charisma}Charisma{/g} modifier) halves the damage."
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.StaggeringBlast.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidStaggeringBlast"
+  },
+  {
+    "Key": "AlchemistFeatures.Bombs.StaggeringBlast.Description",
+    "ProcessTemplates": false,
+    "enGB": "At 10th level, an isekai'ds bombs become particularly overwhelming when they explode. Whenever an isekai'd scores a successful {g|Encyclopedia:Critical}critical hit{/g} with a bomb, the creature directly struck by that bomb is staggered for {g|Encyclopedia:Dice}1d4{/g}+1 {g|Encyclopedia:Combat_Round}rounds{/g}. A successful {g|Encyclopedia:Saving_Throw}Fortitude save{/g} ({g|Encyclopedia:DC}DC{/g} equals the bomb's Reflex save DC to avoid splash {g|Encyclopedia:Damage}damage{/g}) reduces the duration to 1 round."
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFog"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.ToggleAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFogToggleAbility"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.Area.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFogArea"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog30.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFog30"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog30.ToggleAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFog30ToggleAbility"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.Resource.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFogResource"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.ResourceFact.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFogResourceFact"
+  },
+  {
+    "Key": "AlchemistFeatures.IncenseFog.IncreasedRange.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidIncenseFogIncreasedRange"
   }
 ]

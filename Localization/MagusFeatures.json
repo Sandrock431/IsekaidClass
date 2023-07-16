@@ -18,6 +18,25 @@
     "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a magus's flexible arcane knowledge, allowing them to apply the same powers."
   },
   {
+    "Key": "MagusFeatures.IsekaidSpellstrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidSpellstrike"
+  },
+  {
+    "Key": "MagusFeatures.IsekaidSpellstrike.DisplayName",
+    "ProcessTemplates": false,
+    "enGB": "Spellstrike"
+  },
+  {
+    "Key": "MagusFeatures.IsekaidSpellstrike.Description",
+    "enGB": "At 2nd level, whenever an isekai'd casts a {g|Encyclopedia:Spell}spell{/g} with a range of \"touch\" from the isekai'd spell list, he can deliver the spell through any weapon he is wielding as part of a {g|Encyclopedia:MeleeAttack}melee attack{/g}.\n Instead of the free melee {g|Encyclopedia:TouchAttack}touch attack{/g} normally allowed to deliver the spell, an isekai'd can make one free melee attack with his weapon (at his highest {g|Encyclopedia:BAB}base attack bonus{/g}) as part of casting this spell. If successful, this melee attack deals its normal {g|Encyclopedia:Damage}damage{/g} as well as the effects of the spell. If the isekai'd makes this {g|Encyclopedia:Attack}attack{/g} in concert with spell combat, this melee attack takes all the {g|Encyclopedia:Penalty}penalties{/g} accrued by spell combat melee attacks.\n This attack uses the weapon's {g|Encyclopedia:Critical}critical{/g} range (20, 19–20, or 18–20 and modified by the keen weapon property or similar effects), but the spell effect only deals ×2 damage on a successful critical hit, while the weapon damage uses its own critical modifier."
+  },
+  {
+    "Key": "MagusFeatures.IsekaidSpellstrikeAbility.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidSpellstrikeAbility"
+  },
+  {
     "Key": "MagusFeatures.ArcanePool.Name",
     "ProcessTemplates": false,
     "enGB": "Arcane Pool"

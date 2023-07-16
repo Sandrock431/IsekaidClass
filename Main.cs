@@ -1,18 +1,17 @@
 using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Utils;
-using Class;
 using HarmonyLib;
 using Kingmaker.Blueprints.JsonSystem;
 using System;
 using UnityModManagerNet;
-using Utils;
+using IsekaidClass.Utils;
 
-namespace IsekaiClass
+namespace IsekaidClass
 {
     public static class Main
     {
         public static bool Enabled;
-        private static readonly LogWrapper logger = LogWrapper.Get("IsekaiClass");
+        private static readonly LogWrapper logger = LogWrapper.Get("IsekaidClass");
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -76,7 +75,7 @@ namespace IsekaiClass
 
                     Settings.Init();
 
-                    IsekaidClass.Configure();
+                    Isekaid.IsekaidClass.Configure();
                     Patches.Miscellaneous.Configure();
                 }
                 catch (Exception e)

@@ -3,17 +3,18 @@ using Kingmaker.Localization;
 using ModMenu.Settings;
 using Menu = ModMenu.ModMenu;
 
-namespace Utils
+namespace IsekaidClass.Utils
 {
     internal class Settings
     {
         private static readonly LogWrapper logger = LogWrapper.Get(nameof(Settings));
 
         private static readonly string RootKey = "isekaid-class.settings";
-        private static readonly string SettingsTitle = "Settings.Title";
-        private static readonly string SettingsEnableFeature = "Settings.EnableFeature";
+        private static readonly string SettingsTitle = "IsekaidClass.Settings.Title";
+        private static readonly string SettingsEnableFeature = "IsekaidClass.Settings.EnableFeature";
 
-        private static readonly string EnableMainClass = "Settings.MainClass";
+        private static readonly string EnableMainClass = "IsekaidClass.Settings.MainClass";
+        private static readonly string ClassFeaturesHeader = "IsekaidClass.Settings.ClassFeatures.Header";
 
         internal static bool IsEnabled(string key)
         {
@@ -37,8 +38,16 @@ namespace Utils
                 .WithLongDescription(GetString(SettingsEnableFeature))
             );
 
+            // Class Features
+            settings.AddSubHeader(
+                title: GetString(ClassFeaturesHeader),
+                startExpanded: false
+            );
+
             foreach (var (guid, name) in Guids.ClassFeatures)
             {
+                logger.Info($"Creating setting for {name}");
+
                 settings.AddToggle(
                     Toggle.New(
                         key: GetKey(guid),

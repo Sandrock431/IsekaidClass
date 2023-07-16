@@ -1,6 +1,5 @@
-﻿using Kingmaker.Blueprints.Classes;
-
-namespace Utils
+﻿
+namespace IsekaidClass.Utils
 {
     internal class Guids
     {
@@ -10,12 +9,6 @@ namespace Utils
         internal const string IsekaidClassProficiencies = "fd700f9bb89f48b4ab6d26fea6dd7cb0";
         internal const string IsekaidClassProgression = "5270b147e96e48028285a352bb314ba1";
 
-        #region Other Class Levels
-        internal const string BardClassLevels = "06dc4069b92b4f069666920854b0d53d";
-        internal const string DruidClassLevels = "97df7d07198b4c3b921f8c38d680c3a4";
-        internal const string MonkClassLevels = "505caea20d314896b02607005e511d29";
-        #endregion
-
         #region Spells
         internal const string IsekaidClassSpellBook = "e7fd2df70f7443e3bc49f8350674f89b";
         internal const string IsekaidClassSpellList = "4fc90f61dadf4b0bb0bbfa961bae8781";
@@ -23,7 +16,7 @@ namespace Utils
         #endregion
 
         internal const string IsekaidOtherworldlyInitiative = "b826445400b9451c85f91303eff81a06";
-        internal const string IsekaidOtherworldlyInitiative20 = "8bfaf5b5d10d4ff7be1598d9cdfcdeb5";
+        internal const string IsekaidOtherworldlyInitiative19 = "8bfaf5b5d10d4ff7be1598d9cdfcdeb5";
         internal const string IsekaidOtherworldlyInitiativeReapplyLevel = "14c3ff3d4a2d48a6ad150669cf368f74";
         internal const string IsekaidClassWeaponMastery = "d0d8fdc767c74f7998172cf60752cea0";
         #endregion
@@ -32,6 +25,76 @@ namespace Utils
         #region Alchemist Features
         internal const string AlchemistFeatures = "af218413e2c3420db86ba6268816d21f";
         internal const string AlchemistClassLevels = "139db33e4ebf4700b4d34bdbe73b48b8";
+        internal const string DiscoverySelection = "51b2cc70bcd04f388c5edf7410444384";
+
+        #region Bombs
+        internal const string Bombs = "09c494de539847398284f39a793d3c08";
+        internal const string BombsFact = "fd62760e37824c078e7a59f02111059a";
+        internal const string BombsResource = "a9b2e53f29d141a593da8d63150e5c78";
+        internal const string BombsStandard = "6909c04f8650400188201a3405fe41ec";
+
+        #region Bomb Enhancements
+        internal const string DirectedBlastFeature = "8e137c0d80dd45edb9ac9df538c3c0ce";
+        internal const string DirectedBlast = "9bf6b8dc3c064dd8875f00fee668bf6f";
+
+        internal const string StaggeringBlast = "0d517e5f90f743b29a8e04f399b36250";
+        internal const string FastBombsAbility = "1949fe3b7f0a4daca26431d6e2ae9191";
+        #endregion
+
+        internal const string AcidBombsFeature = "eb2d1fbccad54579994009cd7a207b84";
+        internal const string AcidBomb = "a3ea9eae7df14a439c2f425614d4bbed";
+
+        internal const string BlindingBombsFeature = "5f84b32cf07d401eabfa46e5e685abb9";
+        internal const string BlindingBomb = "7e08fcd2d9f34743b391c765c5bca462";
+
+        internal const string BreathWeaponBombFeature = "dce8d03250e94de49e4ffedaf4654042";
+        internal const string BreathWeaponBomb = "c2ae4521dedc4ed1b8d38f30b8692b00";
+
+        internal const string ChokingBombFeature = "0469e78371ee4650b302bed620016575";
+        internal const string ChokingBomb = "d7c4eec7e9ae443d8641677e3a271ff6";
+
+        internal const string CursedBombsFeature = "b8da1c8d270b488da1e918e88cc50c69";
+        internal const string CurseDeteriorationBomb = "70058903c9f84cc9b5a3854192c2ad48";
+        internal const string CurseFeebleBodyBomb = "4fe20ed46f824166979b88b371d5c11c";
+        internal const string CurseIdiocyBomb = "77cf8cc2db4a45199f773369ffdfa051";
+        internal const string CurseWeaknessBomb = "556ffa8d64534a5c8e8be53329645496";
+
+        internal const string DispellingBombsFeature = "5bcd6a2724b2427ba72465a736f7d434";
+        internal const string DispellingBomb = "a8c865278fb841d3a6cd04d3753bf524";
+
+        internal const string ExplosiveBombsFeature = "f5613e36c79745f2bdf9320a1aaabec9";
+        internal const string ExplosiveBomb = "17effe51b8164386ac2003202a405660";
+
+        internal const string ForceBombsFeature = "fd7b45062641444292ed09b6afa7a4cb";
+        internal const string ForceBomb = "c53ba77d88aa4b3da1b885f0de267f71";
+
+        internal const string FrostBombsFeature = "6b3268ba34684131ab37f44be041370a";
+        internal const string FrostBomb = "5304028b884a40b0a1e12d2e10ded577";
+
+        internal const string HolyBombsFeature = "eaf271f2b8034834bef190410f979b36";
+        internal const string HolyBomb = "5814d7104f4049adb8f4cf60a556b466";
+
+        internal const string ShockBombsFeature = "f2acab489dcf474f98303c4de09c727d";
+        internal const string ShockBomb = "c3e239347f10441d9a2a096fd249d1ea";
+
+        internal const string TanglefootBombsFeature = "6eef9fef3eb34e9d82906d93df73c570";
+        internal const string TanglefootBomb = "bcecb846db474a958382ccd1d911fa0a";
+        #endregion
+
+        #region Incense Fog
+        internal const string IncenseFogFeature = "a22ce1f3529b4ca78dcfbe9faa692720";
+        internal const string IncenseFogToggleAbility = "c2db6708f4474ec6b4b1464f3a085b14";
+        internal const string IncenseFogResource = "013197d201934b5ea34097a0272c753f";
+        internal const string IncenseFogResourceFact = "2b849cb9e17f4e2d9ff3ff80730db20f";
+        internal const string IncenseFogArea = "95314d8cd2964c4a8e8779852bcbe612";
+        internal const string IncenseFogIncreasedRange = "c816c717e3374818b83fdf7bb0cc973d";
+        #endregion
+
+        #region Incense Fog 30
+        internal const string IncenseFog30Feature = "110806e580154d6493fcb733b346e457";
+        internal const string IncenseFog30ToggleAbility = "0d1abc8a2f2241e396292daa7ea6b4da";
+        internal const string IncenseFog30Area = "b8e2db89eff3440da508c8ca44d2110c";
+        #endregion
         #endregion
 
         #region Arcanist Features
@@ -49,12 +112,13 @@ namespace Utils
 
         #region Cleric Features
         internal const string ClericFeatures = "4366fcc8247a463cb142ada1f93a74f6";
-        internal const string ClericClassLevels = "bd385a246f274116b4eafc593020cfff";
         #endregion
 
         #region Magus Features
         internal const string MagusFeatures = "e64bd4c83a7243a78cc4c7e10468a910";
         internal const string MagusClassLevels = "9143c519363444829de63b0be49ab98b";
+        internal const string IsekaidSpellStrike = "68c24f227f2c425c92838d3e9058b59b";
+        internal const string IsekaidSpellStrikeAbility = "3e0589c8848346609aaba384dbb6897c";
 
         #region Arcane Pool
         internal const string ArcanePool = "40dda21f6dfc44328a37e14ee679fb1a";
@@ -270,9 +334,9 @@ namespace Utils
         internal static readonly (string guid, string displayName)[] ClassFeatures =
           new (string, string)[]
           {
-              (AlchemistFeatures, Isekaid.ClassFeatures.AlchemistFeatures.DisplayName),
+              (AlchemistFeatures, Isekaid.ClassFeatures.Alchemist.AlchemistFeatures.DisplayName),
               (ArcanistFeatures, Isekaid.ClassFeatures.Arcanist.ArcanistFeatures.DisplayName),
-              (BarbarianFeatures, Isekaid.ClassFeatures.Barbarian.BarbarianFeatures.DisplayName),
+              (BarbarianFeatures, Isekaid.ClassFeatures.BarbarianFeatures.DisplayName),
               (CavalierFeatures, Isekaid.ClassFeatures.CavalierFeatures.DisplayName),
               (ClericFeatures, Isekaid.ClassFeatures.ClericFeatures.DisplayName),
               (MagusFeatures, Isekaid.ClassFeatures.Magus.MagusFeatures.DisplayName),
@@ -285,3 +349,12 @@ namespace Utils
         #endregion
     }
 }
+
+/*
+"link: \w+ \((\w+) .*",?
+Guids.$1,
+
+Guids.(\w +),
+internal const string $1 = "wwwwww";
+*/
+

@@ -20,7 +20,7 @@
   {
     "Key": "Isekaid.Cantrips.Name",
     "ProcessTemplates": false,
-    "enGB": "IsekaidClassCantrips"
+    "enGB": "Cantrips"
   },
   {
     "Key": "Isekaid.Cantrips.Description",
@@ -61,6 +61,11 @@
   {
     "Key": "Isekaid.OtherworldlyInitiative.Name",
     "ProcessTemplates": false,
+    "enGB": "IsekaidOtherwordlyInitative"
+  },
+  {
+    "Key": "Isekaid.OtherworldlyInitiative.DisplayName",
+    "ProcessTemplates": false,
     "enGB": "Otherwordly Initative"
   },
   {
@@ -68,7 +73,17 @@
     "enGB": "Due to their transmigration an isekai'd gains a {g|Encyclopedia:Bonus}bonus{/g} on {g|Encyclopedia:Initiative}initiative{/g} {g|Encyclopedia:Dice}rolls{/g} equal to 1/2 their isekai'd level. At 20th level, an isekai'ds initiative roll is automatically a natural 19."
   },
   {
+    "Key": "Isekaid.OtherworldlyInitiative19.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidOtherwordlyInitative19"
+  },
+  {
+    "Key": "Isekaid.OtherworldlyInitiativeReapplyLevel.Name",
+    "ProcessTemplates": false,
+    "enGB": "IsekaidOtherwordlyInitativeReapplyLevel"
+  },
+  {
     "Key": "Isekaid.WeaponMastery.Description",
-    "enGB": "At 20th level, an isekai'd chooses one weapon, such as the longsword, greataxe, or longbow. Any {g|Encyclopedia:Attack}attacks{/g} made with that weapon automatically confirm all {g|Encyclopedia:Critical}critical{/g} threats and have their {g|Encyclopedia:Damage}damage{/g} multiplier increased by 1 (×2 becomes ×3, for example). In addition, he cannot be disarmed while wielding a weapon of this type."
+    "enGB": "At 20th level, an isekai'd chooses one weapon, such as the longsword, greataxe, or longbow. Any {g|Encyclopedia:Attack}attacks{/g} made with that weapon automatically confirm all {g|Encyclopedia:Critical}critical{/g} threats and have their {g|Encyclopedia:Damage}damage{/g} multiplier increased by 1 (ï¿½2 becomes ï¿½3, for example). In addition, he cannot be disarmed while wielding a weapon of this type."
   }
 ]

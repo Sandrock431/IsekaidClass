@@ -3,7 +3,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 
-namespace Patches
+namespace IsekaidClass.Patches
 {
     internal class Miscellaneous
     {

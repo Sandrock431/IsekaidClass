@@ -1,12 +1,12 @@
 {
-  "Id": "IsekaiClass",
-  "DisplayName": "IsekaiClass",
+  "Id": "IsekaidClass",
+  "DisplayName": "Isekai'd Class",
   "Author": "",
   "Version": "0.1",
   "ManagerVersion": "0.21.3",
   "Requirements": [
     "ModMenu-1.3.0"
   ],
-  "AssemblyName": "IsekaiClass.dll",
-  "EntryMethod": "IsekaiClass.Main.Load"
+  "AssemblyName": "IsekaidClass.dll",
+  "EntryMethod": "IsekaidClass.Main.Load"
 }
