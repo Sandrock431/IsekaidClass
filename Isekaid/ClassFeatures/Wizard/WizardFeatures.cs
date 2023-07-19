@@ -83,38 +83,5 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Wizard
                 .SetLevelEntries(levelEntries)
                 .Configure();
         }
-
-        private static void configureWizardClassLevels(bool enabled)
-        {
-            logger.Info("   Configuring Wizard class levels for prerequisites");
-
-            string name = "WizardClassLevels";
-            string displayName = "WizardFeatures.WizardClassLevels.Name";
-            string description = "WizardFeatures.WizardClassLevels.Description";
-
-            if (!enabled)
-            {
-                FeatureConfigurator.New(name, Guids.WizardClassLevels).Configure();
-                return;
-            }
-
-            FeatureConfigurator.New(name, Guids.WizardClassLevels)
-                .SetDisplayName(displayName)
-                .SetDescription(description)
-                .SetDescriptionShort("")
-                .SetIcon(FeatureRefs.SpecializationSchoolAbjuration.Reference.Get().Icon)
-                .AddClassLevelsForPrerequisites(
-                    actualClass: Guids.IsekaidClass,
-                    fakeClass: CharacterClassRefs.WizardClass.Reference.Get(),
-                    modifier: 1.0,
-                    summand: 0
-                )
-                .SetHideInUI(false)
-                .SetHideInCharacterSheetAndLevelUp(false)
-                .SetRanks(1)
-                .SetReapplyOnLevelUp(false)
-                .SetIsClassFeature(true)
-                .Configure();
-        }
     }
 }

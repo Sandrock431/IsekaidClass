@@ -15,6 +15,7 @@ namespace IsekaidClass.Utils
         internal const string IsekaidClassSpellsPerDay = "9ed80734bfb74a8eaa26cb1a47010d4d";
         #endregion
 
+        internal const string IsekaidTransmigrator = "6740f67d971d4ebabebae0e75ddac057";
         internal const string IsekaidOtherworldlyInitiative = "b826445400b9451c85f91303eff81a06";
         internal const string IsekaidOtherworldlyInitiative19 = "8bfaf5b5d10d4ff7be1598d9cdfcdeb5";
         internal const string IsekaidOtherworldlyInitiativeReapplyLevel = "14c3ff3d4a2d48a6ad150669cf368f74";
@@ -24,7 +25,6 @@ namespace IsekaidClass.Utils
         #region Class Features
         #region Alchemist Features
         internal const string AlchemistFeatures = "af218413e2c3420db86ba6268816d21f";
-        internal const string AlchemistClassLevels = "139db33e4ebf4700b4d34bdbe73b48b8";
         internal const string DiscoverySelection = "51b2cc70bcd04f388c5edf7410444384";
 
         #region Bombs
@@ -116,9 +116,10 @@ namespace IsekaidClass.Utils
 
         #region Magus Features
         internal const string MagusFeatures = "e64bd4c83a7243a78cc4c7e10468a910";
-        internal const string MagusClassLevels = "9143c519363444829de63b0be49ab98b";
-        internal const string IsekaidSpellStrike = "68c24f227f2c425c92838d3e9058b59b";
-        internal const string IsekaidSpellStrikeAbility = "3e0589c8848346609aaba384dbb6897c";
+        internal const string IsekaidSpellCombat = "93ffb9a02e304e908b47ec85ff2cada6";
+        internal const string IsekaidSpellCombatAbility = "32ba97507d0945fd899bfb0435f2d732";
+        internal const string IsekaidSpellstrike = "68c24f227f2c425c92838d3e9058b59b";
+        internal const string IsekaidSpellstrikeAbility = "3e0589c8848346609aaba384dbb6897c";
 
         #region Arcane Pool
         internal const string ArcanePool = "40dda21f6dfc44328a37e14ee679fb1a";
@@ -166,7 +167,9 @@ namespace IsekaidClass.Utils
         #region Perfect Strike
         internal const string PerfectStrike = "d77300c834d04b61937f3f54e55198a2";
         internal const string PerfectStrikeAbility = "9bab03a12b57441397ebfab7fda145da";
+        internal const string PerfectStrikeBuff = "f7d76068bdec4ebb8819aa5929c903fe";
         internal const string PerfectStrikeCritAbility = "3f9a610dea6a4735b65f426ecbb0806a";
+        internal const string PerfectStrikeCritBuff = "11bfabdada0a4441bbaf842214e2bae5";
         #endregion
 
         internal const string SuperiorReflexes = "cc4196884231428c90be645d704372f6";
@@ -175,8 +178,6 @@ namespace IsekaidClass.Utils
 
         #region Paladin Features
         internal const string PaladinFeatures = "b73a9972d9164a8392c3f0486e7e4123";
-        internal const string PaladinClassLevels = "b41cb5067da0407fbf4de727c36362fb";
-
         #endregion
 
         #region Ranger Features
@@ -189,12 +190,10 @@ namespace IsekaidClass.Utils
 
         #region Sorcerer Features
         internal const string SorcererFeatures = "1020a49f8bf94ba0a4a0aec6a1c91c73";
-        internal const string SorcererClassLevels = "4cfd3b0a02a141678105011034399299";
         #endregion
 
         #region Wizard Features
         internal const string WizardFeatures = "ed554b59fff04b53ac47be84bc8ea4ab";
-        internal const string WizardClassLevels = "d837d3c30b0242109f20b456b170e03a";
         internal const string SpecialistSchoolSelection = "1bb34431576b400e9b7e430c9e11eed1";
 
         #region Abjuration Specialization

@@ -15,10 +15,10 @@ using Kingmaker.Settings;
 using IsekaidClass.Isekaid.ClassFeatures;
 using IsekaidClass.Isekaid.ClassFeatures.Arcanist;
 using IsekaidClass.Isekaid.ClassFeatures.Magus;
-using IsekaidClass.Isekaid.ClassFeatures.Wizard;
 using IsekaidClass.Isekaid.Components;
 using IsekaidClass.Isekaid.Spells;
 using IsekaidClass.Isekaid.ClassFeatures.Alchemist;
+using IsekaidClass.Isekaid.ClassFeatures.Wizard;
 
 namespace IsekaidClass.Isekaid
 {
@@ -45,23 +45,24 @@ namespace IsekaidClass.Isekaid
 
         public static void ConfigureDisabled()
         {
+            configureTransmigrator(enabled: false);
             configureOtherworldlyInitiative(enabled: false);
             configureWeaponMastery(enabled: false);
 
             IsekaidProficiencies.ConfigureDisabled();
             Cantrips.ConfigureDisabled();
 
-            
             AlchemistFeatures.ConfigureDisabled();
             ArcanistFeatures.ConfigureDisabled();
             BarbarianFeatures.ConfigureDisabled();
             CavalierFeatures.ConfigureDisabled();
             ClericFeatures.ConfigureDisabled();
             MagusFeatures.ConfigureDisabled();
-            //PaladinFeatures.ConfigureDisabled();
-            //RangerFeatures.ConfigureDisabled();
-            //RogueFeatures.ConfigureDisabled();
-            //WizardFeatures.ConfigureDisabled();
+            PaladinFeatures.ConfigureDisabled();
+            RangerFeatures.ConfigureDisabled();
+            RogueFeatures.ConfigureDisabled();
+            SorcererFeatures.ConfigureDisabled();
+            WizardFeatures.ConfigureDisabled();
 
             ProgressionConfigurator.New(ProgressionName, Guids.IsekaidClassProgression).Configure();
         }
@@ -70,6 +71,7 @@ namespace IsekaidClass.Isekaid
         {
             logger.Info("Configuring isekai'd progression");
 
+            configureTransmigrator(enabled: true);
             configureOtherworldlyInitiative(enabled: true);
             configureWeaponMastery(enabled: true);
 
@@ -82,10 +84,11 @@ namespace IsekaidClass.Isekaid
             CavalierFeatures.Configure();
             ClericFeatures.Configure();
             MagusFeatures.Configure();
-            //PaladinFeatures.Configure();
-            //RangerFeatures.Configure();
-            //RogueFeatures.Configure();
-            //WizardFeatures.Configure();
+            PaladinFeatures.Configure();
+            RangerFeatures.Configure();
+            RogueFeatures.Configure();
+            SorcererFeatures.Configure();
+            WizardFeatures.Configure();
 
             applyPatches();
 
@@ -103,18 +106,8 @@ namespace IsekaidClass.Isekaid
                     FeatureSelectionRefs.AnimalCompanionSelectionDruid.Reference.Get(),
                     FeatureRefs.ScaledFistACBonus.Reference.Get(),
                     FeatureRefs.FlurryOfBlows.Reference.Get(),
-                    //FeatureRefs.SoheiDevotedGuardianFeature.Reference.Get(),
-                    Guids.IsekaidOtherworldlyInitiative,
-                    //Guids.AlchemistFeatures
-                    //Guids.ArcanistFeatures,
-                    //Guids.BarbarianFeatures
-                    //Guids.CavalierFeatures,
-                    //Guids.ClericFeatures
-                    Guids.MagusFeatures
-                    //Guids.PaladinFeatures,
-                    //Guids.RangerFeatures,
-                    //Guids.RogueFeatures,
-                    //Guids.WizardFeatures
+                    Guids.IsekaidTransmigrator,
+                    Guids.IsekaidOtherworldlyInitiative
                 )
                 .AddEntry(
                     2,
@@ -223,6 +216,86 @@ namespace IsekaidClass.Isekaid
                 .Configure();
         }
 
+        private static void configureTransmigrator(bool enabled)
+        {
+            logger.Info("       Configuring transmigrator");
+
+            string name = "Isekaid.Transmigrator.Name";
+            string displayName = "Isekaid.Transmigrator.DisplayName";
+            string description = "Isekaid.Transmigrator.Description";
+
+            if (!enabled)
+            {
+                FeatureConfigurator.New(name, Guids.IsekaidTransmigrator).Configure();
+                return;
+            }
+
+            var classes = new BlueprintCharacterClass[]
+            {
+                CharacterClassRefs.AlchemistClass.Reference.Get(),
+                CharacterClassRefs.ArcanistClass.Reference.Get(),
+                CharacterClassRefs.BarbarianClass.Reference.Get(),
+                CharacterClassRefs.BardClass.Reference.Get(),
+                CharacterClassRefs.BloodragerClass.Reference.Get(),
+                CharacterClassRefs.CavalierClass.Reference.Get(),
+                CharacterClassRefs.ClericClass.Reference.Get(),
+                CharacterClassRefs.DruidClass.Reference.Get(),
+                CharacterClassRefs.FighterClass.Reference.Get(),
+                CharacterClassRefs.HunterClass.Reference.Get(),
+                CharacterClassRefs.InquisitorClass.Reference.Get(),
+                CharacterClassRefs.MagusClass.Reference.Get(),
+                CharacterClassRefs.MonkClass.Reference.Get(),
+                CharacterClassRefs.OracleClass.Reference.Get(),
+                CharacterClassRefs.PaladinClass.Reference.Get(),
+                CharacterClassRefs.RangerClass.Reference.Get(),
+                CharacterClassRefs.RogueClass.Reference.Get(),
+                CharacterClassRefs.ShamanClass.Reference.Get(),
+                CharacterClassRefs.SkaldClass.Reference.Get(),
+                CharacterClassRefs.SlayerClass.Reference.Get(),
+                CharacterClassRefs.SorcererClass.Reference.Get(),
+                CharacterClassRefs.WarpriestClass.Reference.Get(),
+                CharacterClassRefs.WitchClass.Reference.Get(),
+                CharacterClassRefs.WizardClass.Reference.Get()
+            };
+
+            var featureConfigurator = FeatureConfigurator.New(name, Guids.IsekaidTransmigrator)
+                .SetDisplayName(displayName)
+                .SetDescription(description)
+                .SetDescriptionShort("")
+                .SetIcon(FeatureRefs.ArcanistConsumeSpellsFeature.Reference.Get().Icon)
+                .AddFacts(facts: new ()
+                    {
+                        Guids.AlchemistFeatures,
+                        Guids.ArcanistFeatures,
+                        Guids.BarbarianFeatures,
+                        Guids.CavalierFeatures,
+                        Guids.ClericFeatures,
+                        Guids.MagusFeatures,
+                        Guids.PaladinFeatures,
+                        Guids.RangerFeatures,
+                        Guids.RogueFeatures,
+                        Guids.SorcererFeatures,
+                        Guids.WizardFeatures
+                    }
+                )
+                .SetHideInUI(false)
+                .SetHideInCharacterSheetAndLevelUp(false)
+                .SetRanks(1)
+                .SetReapplyOnLevelUp(false)
+                .SetIsClassFeature(true);
+
+            foreach (BlueprintCharacterClass characterClass in classes)
+            {
+                featureConfigurator.AddClassLevelsForPrerequisites(
+                    actualClass: Guids.IsekaidClass,
+                    fakeClass: characterClass,
+                    modifier: 1.0,
+                    summand: 0
+                );
+            }
+
+            featureConfigurator.Configure();
+        }
 
         private static void configureOtherworldlyInitiative(bool enabled)
         {
@@ -380,21 +453,6 @@ namespace IsekaidClass.Isekaid
                             BlueprintTool.GetRef<BlueprintCharacterClassReference>(Guids.IsekaidClass)
                         )
                     )
-                .Configure();
-        }
-
-        private static void patchDevotedGuardian()
-        {
-            logger.Info("       Patching devoted guardian");
-
-            FeatureConfigurator.For(FeatureRefs.SoheiDevotedGuardianFeature.Reference.Get())
-                .EditComponents<ContextRankConfig>(
-                    edit: c => c.m_Class = CommonTool.Append(
-                        c.m_Class,
-                        BlueprintTool.GetRef<BlueprintCharacterClassReference>(Guids.IsekaidClass)
-                    ),
-                    predicate: c => c.name.Equals("$ContextRankConfig$975ee89c-54ed-4b3d-a6de-74d601598813") && c.m_Class.Length > 0
-                )
                 .Configure();
         }
 

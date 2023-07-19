@@ -11,6 +11,7 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using System.Linq;
 using IsekaidClass.Utils;
 using System;
+using Kingmaker.Enums;
 
 namespace IsekaidClass.Isekaid.ClassFeatures
 {
@@ -46,10 +47,10 @@ namespace IsekaidClass.Isekaid.ClassFeatures
         {
             logger.Info("Configuring Paladin Features progression");
 
-            //patchSmiteEvil();
-            //patchLayOnHands();
-            //patchMercies();
-            //patchAuraOfJusticeAbility();
+            patchSmiteEvil();
+            patchLayOnHands();
+            patchMercies();
+            patchAuraOfJusticeAbility();
 
             var levelEntries = LevelEntryBuilder.New()
                 .AddEntry(
@@ -159,39 +160,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures
                 .Configure();
         }
 
-        private static void configurePaladinClassLevels(bool enabled)
-        {
-            logger.Info("   Configuring Paladin class levels for prerequisites");
-
-            string name = "PaladinClassLevels";
-            string displayName = "PaladinFeatures.PaladinClassLevels.Name";
-            string description = "PaladinFeatures.PaladinClassLevels.Description";
-
-            if (!enabled)
-            {
-                FeatureConfigurator.New(name, Guids.PaladinClassLevels).Configure();
-                return;
-            }
-
-            FeatureConfigurator.New(name, Guids.PaladinClassLevels)
-                .SetDisplayName(displayName)
-                .SetDescription(description)
-                .SetDescriptionShort("")
-                .SetIcon(FeatureRefs.SmiteEvilFeature.Reference.Get().Icon)
-                .AddClassLevelsForPrerequisites(
-                    actualClass: Guids.IsekaidClass,
-                    fakeClass: CharacterClassRefs.PaladinClass.Reference.Get(),
-                    modifier: 1.0,
-                    summand: 0
-                )
-                .SetHideInUI(false)
-                .SetHideInCharacterSheetAndLevelUp(false)
-                .SetRanks(1)
-                .SetReapplyOnLevelUp(false)
-                .SetIsClassFeature(true)
-                .Configure();
-        }
-
         private static void patchSmiteEvil()
         {
             logger.Info("   Patching smite evil");
@@ -211,7 +179,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures
         {
             logger.Info("   Patching lay on hands");
 
-
             // Lay on Hands resource
             AbilityResourceConfigurator.For(AbilityResourceRefs.LayOnHandsResource.Reference.Get())
                 .ModifyMaxAmount(
@@ -224,23 +191,21 @@ namespace IsekaidClass.Isekaid.ClassFeatures
 
             // Lay on Hands Self
             AbilityConfigurator.For(AbilityRefs.LayOnHandsSelf.Reference.Get())
-                .EditComponents<ContextRankConfig>(
+                .EditComponent<ContextRankConfig>(
                     edit: c => c.m_Class = CommonTool.Append(
                         c.m_Class,
                         BlueprintTool.GetRef<BlueprintCharacterClassReference>(Guids.IsekaidClass)
-                    ),
-                    predicate: c => c.name.Equals("$AbilityRankConfig$a8f474f1-ee0f-44e3-96a8-9db3970f668d") && c.m_Class.Length > 0
+                    )
                 )
                 .Configure();
 
             // Lay on Hands Others
-            AbilityConfigurator.For(AbilityRefs.LayOnHandsSelf.Reference.Get())
-                .EditComponents<ContextRankConfig>(
-                    edit: c => c.m_Class = CommonTool.Append(
+            AbilityConfigurator.For(AbilityRefs.LayOnHandsOthers.Reference.Get())
+                .EditComponent<ContextRankConfig>(
+                    c => c.m_Class = CommonTool.Append(
                         c.m_Class,
                         BlueprintTool.GetRef<BlueprintCharacterClassReference>(Guids.IsekaidClass)
-                    ),
-                    predicate: c => c.name.Equals("$AbilityRankConfig$a8f474f1-ee0f-44e3-96a8-9db3970f668d") && c.m_Class.Length > 0
+                    )
                 )
                 .Configure();
 
@@ -309,7 +274,9 @@ namespace IsekaidClass.Isekaid.ClassFeatures
                         c.m_Class,
                         BlueprintTool.GetRef<BlueprintCharacterClassReference>(Guids.IsekaidClass)
                     ),
-                    predicate: c => c.name.Equals("$ContextRankConfig$808349e5-6a40-4c4d-96be-01e0a5db02ab") && c.m_Class.Length > 0
+                    predicate: c => c.m_Type == AbilityRankType.DamageBonus
+                        && c.m_BaseValueType == ContextRankBaseValueType.ClassLevel
+                        && c.m_Class.Length > 0
                 )
                 .Configure();
         }

@@ -14,7 +14,7 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using IsekaidClass.Utils;
 
-namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
+namespace IsekaidClass.Isekaid.ClassFeatures.Magus
 {
     internal class ArcanaSelection
     {
@@ -38,17 +38,7 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
 
             configureArcaneAccuracy(enabled: true);
             configureHastedAssault(enabled: true);
-            //BaneBlade.Configure();
-            //DevotedBlade.Configure();
-            //DimensionStrike.Configure();
-            //EmpoweredArcana.Configure();
-            //EnduringBlade.Configure();
-            //GhostBlade.Configure();
-            //HastedAssault.Configure();
-            //MaximizedArcana.Configure();
             configurePrescientAttack(enabled: true);
-            //QuickenedArcana.Configure();
-            //ReachArcana.Configure();
 
             FeatureSelectionConfigurator.New(FeatureName, Guids.ArcanaSelection)
                 .SetDisplayName(DisplayName)
@@ -70,26 +60,17 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
                 .SetAllFeatures(new Blueprint<Kingmaker.Blueprints.BlueprintFeatureReference>[]
                 {
                     Guids.ArcaneAccuracy,
-                    //Guids.BaneBlade,
                     FeatureRefs.BaneBladeFeature.Reference.Get(),
-                    //Guids.DevotedBlade,
                     FeatureRefs.DevotedBladeFeature.Reference.Get(),
-                    //Guids.DimensionStrike,
                     FeatureRefs.DimensionStrikeFeature.Reference.Get(),
-                    //Guids.EmpoweredArcana,
                     FeatureRefs.EmpoweredArcanaFeature.Reference.Get(),
-                    //Guids.EnduringBlade,
                     FeatureRefs.EnduringBladeFeature.Reference.Get(),
                     FeatureRefs.ExtendedArcanaFeature.Reference.Get(),
-                    //Guids.GhostBlade,
                     FeatureRefs.GhostBladeFeature.Reference.Get(),
                     Guids.HastedAssault,
-                    //Guids.MaximizedArcana,
                     FeatureRefs.MaximizedArcanaFeature.Reference.Get(),
                     Guids.PrescientAttack,
-                    //Guids.QuickenedArcana,
                     FeatureRefs.QuickenedArcanaFeature.Reference.Get(),
-                    //Guids.ReachArcana,
                     FeatureRefs.ReachArcanaFeature.Reference.Get()
                 })
                 .Configure();
@@ -104,7 +85,7 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
 
             if (!enabled)
             {
-                configureArcaneAccuracyAbility(enabled:  false);
+                configureArcaneAccuracyAbility(enabled: false);
 
                 FeatureConfigurator.New(name, Guids.ArcaneAccuracy).Configure();
                 return;
@@ -147,7 +128,7 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
                         typeof(AbilityEffectRunAction),
                         typeof(AbilitySpawnFx),
                         typeof(ContextCalculateSharedValue)
-                    } 
+                    }
                 )
                 .SetDescription(description)
                 .AddAbilityResourceLogic(
@@ -190,7 +171,7 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana
                     componentTypes: new[]
                     {
                         typeof(PrerequisiteClassLevel)
-                    } 
+                    }
                 )
                 .SetDescription(description)
                 .AddFacts(

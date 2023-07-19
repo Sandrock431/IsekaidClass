@@ -26,7 +26,7 @@ namespace IsekaidClass.Isekaid
 
             FeatureConfigurator.New(FeatureName, Guids.IsekaidClassProficiencies)
                 .SetDisplayName(FeatureName)
-            .SetDescription(Description)
+                .SetDescription(Description)
                 .AddComponent(FeatureRefs.FighterProficiencies.Reference.Get().GetComponent<AddFacts>())
                 .AddProficiencies(
                     weaponProficiencies: new WeaponCategory[] {

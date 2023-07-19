@@ -46,7 +46,7 @@ namespace IsekaidClass.Utils
 
             foreach (var (guid, name) in Guids.ClassFeatures)
             {
-                logger.Info($"Creating setting for {name}");
+                logger.Info($"  Creating setting for {name}");
 
                 settings.AddToggle(
                     Toggle.New(

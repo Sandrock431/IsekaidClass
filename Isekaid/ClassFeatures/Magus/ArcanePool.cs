@@ -10,7 +10,6 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using IsekaidClass.Utils;
-using IsekaidClass.Isekaid.ClassFeatures.Magus.Arcana;
 
 namespace IsekaidClass.Isekaid.ClassFeatures.Magus
 {

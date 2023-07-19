@@ -9,7 +9,6 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using Kingmaker.Settings;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
-using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 
 namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
@@ -17,8 +16,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
     internal class IncenseFog
     {
         private static readonly LogWrapper logger = LogWrapper.Get(nameof(IncenseFog));
-
-        private static readonly string FeatureName = "AlchemistFeatures.IncenseFog.Name";
 
         public static void ConfigureDisabled()
         {

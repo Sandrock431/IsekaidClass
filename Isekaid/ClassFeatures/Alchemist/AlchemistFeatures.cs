@@ -37,7 +37,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
 
         public static void ConfigureDisabled()
         {
-            configureAlchemistClassLevels(enabled: false);
             Bombs.ConfigureDisabled();
             DiscoverySelection.ConfigureDisabled();
             IncenseFog.ConfigureDisabled();
@@ -49,7 +48,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
         {
             logger.Info("Configuring Alchemist Features progression");
 
-            configureAlchemistClassLevels(enabled: true);
             Bombs.ConfigureEnabled();
             DiscoverySelection.ConfigureEnabled();
             IncenseFog.ConfigureEnabled();
@@ -62,7 +60,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
             var levelEntries = LevelEntryBuilder.New()
                 .AddEntry(
                     1,
-                    Guids.AlchemistClassLevels,
                     Guids.Bombs,
                     FeatureRefs.MutagenFeature.Reference.Get(),
                     FeatureRefs.BrewPotions.Reference.Get(),
@@ -190,39 +187,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Alchemist
                 .SetForAllOtherClasses(false)
                 .SetLevelEntries(levelEntries)
                 .SetUIGroups(uiGroups)
-                .Configure();
-        }
-
-        private static void configureAlchemistClassLevels(bool enabled)
-        {
-            logger.Info("   Configuring alchemist class levels for prerequisites");
-
-            string name = "AlchemistFeatures.AlchemistClassLevels.Name";
-            string displayName = "AlchemistFeatures.AlchemistClassLevels.DisplayName";
-            string description = "AlchemistFeatures.AlchemistClassLevels.Description";
-
-            if (!enabled)
-            {
-                FeatureConfigurator.New(name, Guids.AlchemistClassLevels).Configure();
-                return;
-            }
-
-            FeatureConfigurator.New(name, Guids.AlchemistClassLevels)
-                .SetDisplayName(displayName)
-                .SetDescription(description)
-                .SetDescriptionShort("")
-                .SetIcon(FeatureRefs.BrewPotions.Reference.Get().Icon)
-                .AddClassLevelsForPrerequisites(
-                    actualClass: Guids.IsekaidClass,
-                    fakeClass: CharacterClassRefs.AlchemistClass.Reference.Get(),
-                    modifier: 1.0,
-                    summand: 0
-                )
-                .SetHideInUI(false)
-                .SetHideInCharacterSheetAndLevelUp(false)
-                .SetRanks(1)
-                .SetReapplyOnLevelUp(false)
-                .SetIsClassFeature(true)
                 .Configure();
         }
 

@@ -3,7 +3,6 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
-using IsekaidClass.Isekaid.ClassFeatures.Magus.SwordSaint;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Settings;
@@ -17,7 +16,19 @@ using Kingmaker.UnitLogic.Parts;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Entities;
-using System.Reflection;
+using Kingmaker.Utility;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.Items;
+using Kingmaker.UnitLogic.Commands;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.Blueprints.Facts;
+using Kingmaker.Blueprints.JsonSystem;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using Kingmaker.Enums;
 
 namespace IsekaidClass.Isekaid.ClassFeatures.Magus
 {
@@ -47,33 +58,32 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
         public static void ConfigureDisabled()
         {
             ProgressionConfigurator.New(ProgressionName, Guids.MagusFeatures).Configure();
-            configureMagusClassLevels(enabled: false);
             ArcanePool.ConfigureDisabled();
+            configureSpellCombat(enabled: false);
             configureSpellStrike(enabled: false);
-            //configureSwordSaintAbilities(enabled: false);
+            configureSwordSaintAbilities(enabled: false);
         }
 
         public static BlueprintProgression ConfigureEnabled()
         {
             logger.Info("Configuring Magus Features progression");
 
-            configureMagusClassLevels(enabled: true);
             ArcanePool.ConfigureEnabled();
+            configureSpellCombat(enabled: true);
             configureSpellStrike(enabled: true);
-            //configureSwordSaintAbilities(enabled: true);
+            configureSwordSaintAbilities(enabled: true);
 
             var levelEntries = LevelEntryBuilder.New()
                 .AddEntry(
                     1,
                     Guids.ArcanePool,
-                    FeatureRefs.SpellCombatFeature.Reference.Get(),
+                    Guids.IsekaidSpellCombat,
                     FeatureSelectionRefs.SwordSaintChosenWeaponSelection.Reference.Get(),
                     Guids.CannyDefense
                 )
                 .AddEntry(
                     2,
-                    //FeatureRefs.SpellStrikeFeature.Reference.Get()
-                    Guids.IsekaidSpellStrike
+                    Guids.IsekaidSpellstrike
                 )
                 .AddEntry(
                     3,
@@ -136,8 +146,9 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 )
                 .AddEntry(
                     18,
-                    Guids.ArcanaSelection  
-                );
+                    Guids.ArcanaSelection
+                )
+                ;
 
             var uiGroups = UIGroupBuilder.New()
                 .AddGroup(
@@ -148,12 +159,12 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                     FeatureRefs.ArcaneWeaponPlus5.Reference.Get()
                 )
                 .AddGroup(
-                    FeatureRefs.SpellCombatFeature.Reference.Get(),
+                    Guids.IsekaidSpellCombat,
                     FeatureRefs.ImprovedSpellCombat.Reference.Get(),
                     FeatureRefs.GreaterSpellCombat.Reference.Get()
                 )
                 .AddGroup(
-                    FeatureRefs.SpellStrikeFeature.Reference.Get(),
+                    Guids.IsekaidSpellstrike,
                     Guids.DimensionStrike,
                     Guids.PerfectStrike,
                     FeatureRefs.Counterstrike.Reference.Get(),
@@ -167,7 +178,8 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 .AddGroup(
                     Guids.ArcanaSelection,
                     Guids.LightningDraw
-                );
+                )
+                ;
 
             return ProgressionConfigurator.New(ProgressionName, Guids.MagusFeatures)
                 .SetDisplayName(DisplayName)
@@ -187,36 +199,34 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 .Configure();
         }
 
-        private static void configureMagusClassLevels(bool enabled)
+        private static void configureSpellCombat(bool enabled)
         {
-            logger.Info("   Configuring magus class levels for prerequisites");
+            logger.Info("   Configuring spell combat");
 
-            string name = "MagusClassLevels";
-            string displayName = "MagusFeatures.MagusClassLevels.Name";
-            string description = "MagusFeatures.MagusClassLevels.Description";
+            string name = "MagusFeatures.IsekaidSpellCombat.Name";
+            string abilityName = "MagusFeatures.IsekaidSpellCombatAbility.Name";
+            string description = "MagusFeatures.IsekaidSpellCombat.Description";
 
             if (!enabled)
             {
-                FeatureConfigurator.New(name, Guids.MagusClassLevels).Configure();
+                ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellCombatAbility).Configure();
+                FeatureConfigurator.New(name, Guids.IsekaidSpellCombat).Configure();
                 return;
             }
 
-            FeatureConfigurator.New(name, Guids.MagusClassLevels)
-                .SetDisplayName(displayName)
+            var spellCombatAbility = ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellCombatAbility)
+                .CopyFrom(ActivatableAbilityRefs.SpellCombatAbility.Reference.Get())
                 .SetDescription(description)
-                .SetDescriptionShort("")
-                .SetIcon(FeatureRefs.SpellCombatFeature.Reference.Get().Icon)
-                .AddClassLevelsForPrerequisites(
-                    actualClass: Guids.IsekaidClass,
-                    fakeClass: CharacterClassRefs.MagusClass.Reference.Get(),
-                    modifier: 1.0,
-                    summand: 0
-                )
-                .SetHideInUI(false)
-                .SetHideInCharacterSheetAndLevelUp(false)
-                .SetRanks(1)
-                .SetReapplyOnLevelUp(false)
-                .SetIsClassFeature(true)
+                .SetIsOnByDefault()
+                .SetDeactivateImmediately()
+                .Configure();
+
+            FeatureConfigurator.New(name, Guids.IsekaidSpellCombat)
+                .CopyFrom(FeatureRefs.SpellCombatFeature.Reference.Get())
+                .SetDescription(description)
+                .AddMagusMechanicPart(AddMagusMechanicPart.Feature.EldritchArcher)
+                .AddMagusMechanicPart(AddMagusMechanicPart.Feature.SpellCombat)
+                .AddFacts(new() { spellCombatAbility })
                 .Configure();
         }
 
@@ -226,33 +236,25 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
 
             string name = "MagusFeatures.IsekaidSpellstrike.Name";
             string abilityName = "MagusFeatures.IsekaidSpellstrikeAbility.Name";
-            string displayName = "MagusFeatures.IsekaidSpellstrike.DisplayName";
             string description = "MagusFeatures.IsekaidSpellstrike.Description";
-            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
 
             if (!enabled)
             {
-                ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellStrikeAbility).Configure();
-                FeatureConfigurator.New(name, Guids.IsekaidSpellStrike).Configure();
+                ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellstrikeAbility).Configure();
+                FeatureConfigurator.New(name, Guids.IsekaidSpellstrike).Configure();
                 return;
             }
 
-            var spellStrikeAbility = ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellStrikeAbility)
-                .SetDisplayName(displayName)
+            var spellStrikeAbility = ActivatableAbilityConfigurator.New(abilityName, Guids.IsekaidSpellstrikeAbility)
+                .CopyFrom(ActivatableAbilityRefs.SpellStrikeAbility.Reference.Get())
                 .SetDescription(description)
-                .SetIcon(icon)
                 .SetIsOnByDefault()
                 .SetDeactivateImmediately()
-                .SetBuff(BuffRefs.SpellStrikeBuff.ToString())
                 .Configure();
 
-            FeatureConfigurator.New(name, Guids.IsekaidSpellStrike)
-                .SetDisplayName(displayName)
+            FeatureConfigurator.New(name, Guids.IsekaidSpellstrike)
+                .CopyFrom(FeatureRefs.SpellStrikeFeature.Reference.Get())
                 .SetDescription(description)
-                .SetDescriptionShort("")
-                .SetIcon(icon)
-                .SetIsClassFeature(true)
-                //.AddMagusMechanicPart(AddMagusMechanicPart.Feature.EldritchArcher)
                 .AddMagusMechanicPart(AddMagusMechanicPart.Feature.Spellstrike)
                 .AddFacts(new() { spellStrikeAbility })
                 .Configure();
@@ -279,13 +281,6 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
             configureCriticalPerfection(enabled: true);
             configureSuperiorReflexes(enabled: true);
             configureLethalFocus(enabled: true);
-
-            //CannyDefense.Configure();
-            //PerfectStrike.Configure();
-            //LightningDraw.Configure();
-            //CriticalPerfection.Configure();
-            //SuperiorReflexes.Configure();
-            //LethalFocus.Configure();
         }
 
         private static void configureCannyDefense(bool enabled)
@@ -315,77 +310,73 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
             string name = "MagusFeatures.SwordSaint.PerfectStrike.Name";
             string description = "MagusFeatures.SwordSaint.PerfectStrike.Description";
 
+            string abilityName = "MagusFeatures.SwordSaint.PerfectStrikeAbility.Name";
+            string abilityDescription = "MagusFeatures.SwordSaint.PerfectStrikeAbility.Description";
+            string buffName = "MagusFeatures.SwordSaint.PerfectStrikeBuff.Name";
+
+            string critAbilityName = "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Name";
+            string critAbilityDescription = "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Description";
+            string critBuffName = "MagusFeatures.SwordSaint.PerfectStrikeCritBuffName.Name"; 
+
             if (!enabled)
             {
-                configurePerfectStrikeAbility(enabled: false);
-                configurePerfectStrikeCritAbility(enabled: false);
+                BuffConfigurator.New(buffName, Guids.PerfectStrikeBuff).Configure();
+                ActivatableAbilityConfigurator.New(abilityName, Guids.PerfectStrikeAbility).Configure();
+                BuffConfigurator.New(critBuffName, Guids.PerfectStrikeCritBuff).Configure();
+                ActivatableAbilityConfigurator.New(critAbilityName, Guids.PerfectStrikeCritAbility).Configure();
                 FeatureConfigurator.New(name, Guids.PerfectStrike).Configure();
                 return;
             }
 
-            configurePerfectStrikeAbility(enabled: true);
-            configurePerfectStrikeCritAbility(enabled: true);
+            // Perfect Strike Ability
+            var buff = BuffConfigurator.New(buffName, Guids.PerfectStrikeBuff)
+                .CopyFrom(BuffRefs.SwordSaintPerfectStrikeBuff.Reference.Get())
+                .SetDescription(abilityDescription)
+                .AddComponent<PerfectStrikeComponent>()
+                .Configure();
+            
+            var ability = ActivatableAbilityConfigurator.New(abilityName, Guids.PerfectStrikeAbility)
+                .CopyFrom(ActivatableAbilityRefs.SwordSaintPerfectStrikeAbility.Reference.Get())
+                .SetDescription(abilityDescription)
+                .AddActivatableAbilityResourceLogic(
+                    requiredResource: Guids.ArcanePoolResource,
+                    spendType: ResourceSpendType.AttackHit
+                )
+                .SetBuff(buff)
+                .Configure();
 
+            // Perfect Strike Crit Ability
+            var critBuff = BuffConfigurator.New(critBuffName, Guids.PerfectStrikeCritBuff)
+                .CopyFrom(BuffRefs.SwordSaintPerfectStrikeCritBuff.Reference.Get())
+                .SetDescription(critAbilityDescription)
+                .AddComponent<PerfectStrikeCritComponent>()
+                .Configure();
+
+            var critAbility = ActivatableAbilityConfigurator.New(critAbilityName, Guids.PerfectStrikeCritAbility)
+                .CopyFrom(ActivatableAbilityRefs.SwordSaintPerfectStrikeCritAbility.Reference.Get())
+                .SetDescription(critAbilityDescription)
+                .AddActivatableAbilityResourceLogic(
+                    requiredResource: Guids.ArcanePoolResource,
+                    spendType: ResourceSpendType.AttackHit
+                )
+                .SetBuff(critBuff)
+                .Configure();
+
+            // Perfect Strike feature
             FeatureConfigurator.New(name, Guids.PerfectStrike)
-                .CopyFrom(FeatureRefs.PerfectStrikeFeature.Reference.Get())
+                .CopyFrom(FeatureRefs.SwordSaintPerfectStrikeFeature.Reference.Get())
                 .SetDescription(description)
                 .AddFacts(
                     facts: new()
                     {
-                        Guids.PerfectStrikeAbility,
-                        Guids.PerfectStrikeCritAbility,
+                        ability,
+                        critAbility
                     },
                     casterLevel: 0,
                     doNotRestoreMissingFacts: false,
                     hasDifficultyRequirements: false,
                     invertDifficultyRequirements: false,
                     minDifficulty: GameDifficultyOption.Story
-                )
-                .Configure();
-        }
-
-        private static void configurePerfectStrikeAbility(bool enabled)
-        {
-            logger.Info("       Configuring perfect strike ability");
-
-            string name = "MagusFeatures.SwordSaint.PerfectStrikeAbility.Name";
-            string description = "MagusFeatures.SwordSaint.PerfectStrikeAbility.Description";
-
-            if (!enabled)
-            {
-                ActivatableAbilityConfigurator.New(name, Guids.PerfectStrikeAbility).Configure();
-                return;
-            }
-
-            ActivatableAbilityConfigurator.New(name, Guids.PerfectStrikeAbility)
-                .CopyFrom(ActivatableAbilityRefs.SwordSaintPerfectStrikeAbility.Reference.Get())
-                .SetDescription(description)
-                .AddActivatableAbilityResourceLogic(
-                    requiredResource: Guids.ArcanePoolResource,
-                    spendType: ResourceSpendType.AttackHit
-                )
-                .Configure();
-        }
-
-        private static void configurePerfectStrikeCritAbility(bool enabled)
-        {
-            logger.Info("       Configuring perfect strike crit ability");
-
-            string name = "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Name";
-            string description = "MagusFeatures.SwordSaint.PerfectStrikeCritAbility.Description";
-
-            if (!enabled)
-            {
-                ActivatableAbilityConfigurator.New(name, Guids.PerfectStrikeCritAbility).Configure();
-                return;
-            }
-
-            ActivatableAbilityConfigurator.New(name, Guids.PerfectStrikeCritAbility)
-                .CopyFrom(ActivatableAbilityRefs.SwordSaintPerfectStrikeCritAbility.Reference.Get())
-                .SetDescription(description)
-                .AddActivatableAbilityResourceLogic(
-                    requiredResource: Guids.ArcanePoolResource,
-                    spendType: ResourceSpendType.AttackHit
                 )
                 .Configure();
         }
@@ -457,7 +448,7 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 .AddDerivativeStatBonus(
                     baseStat: StatType.Charisma,
                     derivativeStat: StatType.AttackOfOpportunityCount,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.None
+                    descriptor: ModifierDescriptor.None
                 )
                 .AddRecalculateOnStatChange(
                     stat: StatType.Charisma,
@@ -486,9 +477,95 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 .Configure();
         }
 
-        /// <summary>
-        /// Flags spells from the Isekai'd spellbook as valid "magus" spells so the magus features work normally.
-        /// </summary>
+        public class CannyDefenseComponent : UnitFactComponentDelegate, IGlobalSubscriber, ISubscriber
+        {
+            private static readonly LogWrapper logger = LogWrapper.Get(nameof(CannyDefenseComponent));
+
+            public override void OnTurnOn()
+            {
+                base.OnTurnOn();
+                ActivateModifier();
+            }
+
+            public override void OnTurnOff()
+            {
+                base.OnTurnOff();
+                DeactivateModifier();
+            }
+
+            private void ActivateModifier()
+            {
+                int value = Math.Min(
+                    Owner.Stats.Charisma.Bonus,
+                    Owner.Progression.GetClassLevel(BlueprintTool.Get<BlueprintCharacterClass>(Guids.IsekaidClass))
+                );
+                Owner.Stats.AC.AddModifierUnique(value, Runtime, ModifierDescriptor.Dodge);
+            }
+
+            private void DeactivateModifier()
+            {
+                Owner.Stats.AC.RemoveModifiersFrom(Runtime);
+            }
+        }
+
+        public class CriticalPerfectionComponent : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber
+        {
+            private static readonly LogWrapper logger = LogWrapper.Get(nameof(CriticalPerfectionComponent));
+
+            public void OnEventAboutToTrigger(RuleAttackRoll evt)
+            {
+                evt.CriticalConfirmationBonus += Math.Max(0, Owner.Stats.Charisma.Bonus);
+            }
+
+            public void OnEventDidTrigger(RuleAttackRoll evt)
+            {
+            }
+        }
+
+        public class LethalFocusComponent : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackWithWeapon>, ISubscriber, IInitiatorRulebookSubscriber
+        {
+            private static readonly LogWrapper logger = LogWrapper.Get(nameof(LethalFocusComponent));
+
+            public void OnEventAboutToTrigger(RuleAttackWithWeapon evt)
+            {
+                evt.WeaponStats.AddDamageModifier(Math.Max(0, Owner.Stats.Charisma.Bonus), Fact, ModifierDescriptor.UntypedStackable);
+            }
+
+            public void OnEventDidTrigger(RuleAttackWithWeapon evt)
+            {
+            }
+        }
+
+        [TypeId("087af39e46f54aa89e4124fa6c52b58a")]
+        [AllowMultipleComponents]
+        [AllowedOn(typeof(BlueprintUnitFact), false)]
+        public class PerfectStrikeComponent : UnitFactComponentDelegate, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>
+        {
+            public void OnEventAboutToTrigger(RuleAttackWithWeapon evt)
+            {
+                evt.Maximized.Set(value: true, base.Fact);
+            }
+
+            public void OnEventDidTrigger(RuleAttackWithWeapon evt)
+            {
+            }
+        }
+
+        [TypeId("bb031a5418e34ddd9de67a39b621be77")]
+        [AllowMultipleComponents]
+        [AllowedOn(typeof(BlueprintUnitFact), false)]
+        public class PerfectStrikeCritComponent : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber
+        {
+            public void OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
+            {
+                evt.AdditionalCriticalMultiplier.Add(new Modifier(1, base.Fact, ModifierDescriptor.UntypedStackable));
+            }
+
+            public void OnEventDidTrigger(RuleCalculateWeaponStats evt)
+            {
+            }
+        }
+
         [HarmonyPatch(typeof(UnitPartMagus))]
         static class UnitPartMagus_Patch
         {
@@ -502,113 +579,85 @@ namespace IsekaidClass.Isekaid.ClassFeatures.Magus
                 }
             }
 
+            /// <summary>
+            /// Flags spells from the Isekai'd spellbook as valid "magus" spells so the magus features work normally.
+            /// </summary>
             [HarmonyPatch(nameof(UnitPartMagus.IsSpellFromMagusSpellList)), HarmonyPostfix]
-            static void IsSpellFromMagusSpellList(AbilityData spell, ref bool __result)
+            [HarmonyPriority(1000)]
+            static void IsSpellFromMagusSpellList(AbilityData spell, UnitPartMagus __instance, ref bool __result)
             {
-                if (spell.SpellbookBlueprint == IsekaidSpellbook)
+                if (spell.IsInSpellList(IsekaidSpellbook.SpellList) || spell.Caster.GetSpellbook(IsekaidSpellbook).IsKnown(spell.Blueprint))
                 {
                     __result = true;
                 }
             }
 
+            /// <summary>
+            /// Disables weapon check
+            /// </summary>
             [HarmonyPatch(nameof(UnitPartMagus.HasOneHandedMeleeWeaponAndFreehand)), HarmonyPostfix]
+            [HarmonyPriority(1000)]
             static void HasOneHandedMeleeWeaponAndFreehand(UnitDescriptor unit, ref bool __result)
             {
                 __result = true;
             }
         }
 
-        [HarmonyPatch(typeof(UnitEntityData))]
-        static class UnitEntityData_Patch
+        [HarmonyPatch(typeof(UnitUseAbility))]
+        static class UnitUseAbility_Patch
         {
-            [HarmonyPatch(nameof(UnitEntityData.PreparedSpellCombat)), HarmonyPostfix]
-            static void PreparedSpellCombat(UnitEntityData __instance, ref bool __result)
+            /// <summary>
+            /// Allows both melee or ranged spellstrike
+            /// </summary>
+            [HarmonyPatch(nameof(UnitUseAbility.CreateCastCommand)), HarmonyPostfix]
+            [HarmonyPriority(1000)]
+            static void CreateCastCommand(AbilityData spell, TargetWrapper target, UnitUseAbility __instance, ref UnitCommand __result)
             {
-                logger.Info("###############################");
-                logger.Info($"PreparedSpellCombat: {__result}");
-
-                UnitPartMagus unitPartMagus = __instance.Ensure<UnitPartMagus>();
-
-                if (unitPartMagus == null)
+                UnitEntityData unit = spell.Caster.Unit;
+                UnitPartTouch unitPartTouch = unit.Get<UnitPartTouch>();
+                if (unitPartTouch != null)
                 {
-                    logger.Info("Null unit part magus");
-                }
-                else
-                {
-                    logger.Info($"IsCastMagusSpellInThisRound = {unitPartMagus.IsCastMagusSpellInThisRound}");
-                    logger.Info($"LastCastedMagusSpellTime = {unitPartMagus.LastCastedMagusSpellTime}");
-                    logger.Info($"LastAttackTime = {unitPartMagus.LastAttackTime}");
-                    logger.Info($"CanUseSpellCombatInThisRound = {unitPartMagus.CanUseSpellCombatInThisRound}");
-                }
-                logger.Info("###############################");
+                    BlueprintAbility blueprint = unitPartTouch.Ability.Blueprint;
+                    AbilityEffectStickyTouch abilityEffectStickyTouch = spell.Blueprint.StickyTouch.Or(null);
 
-            }
-
-            [HarmonyPatch(nameof(UnitEntityData.PreparedSpellStrike)), HarmonyPostfix]
-            static void PreparedSpellStrike(UnitEntityData __instance, ref bool __result, bool __runOriginal)
-            {
-                logger.Info("###############################");
-
-                logger.Info($"PreparedSpellStrike: {__result}");
-                logger.Info($"runOriginal: {__runOriginal}");
-
-                UnitPartMagus unitPartMagus = __instance.Get<UnitPartMagus>();
-
-                if (unitPartMagus == null)
-                {
-                    logger.Info("Null unit part magus");
-                }
-                else
-                {
-                    logger.Info($"IsCastMagusSpellInThisRound = {unitPartMagus.IsCastMagusSpellInThisRound}");
-                    logger.Info($"LastCastedMagusSpellTime = {unitPartMagus.LastCastedMagusSpellTime}");
-                    logger.Info($"LastAttackTime = {unitPartMagus.LastAttackTime}");
-                    logger.Info($"Spellstrike.Active = {unitPartMagus.Spellstrike.Active}");
-
-                    if (unitPartMagus.EldritchArcherSpell != null)
+                    if (blueprint == ((abilityEffectStickyTouch != null) ? abilityEffectStickyTouch.TouchDeliveryAbility : null) && unitPartTouch.Ability.SourceItem == spell.SourceItem)
                     {
-                        logger.Info($"EldritchArcherSpell = {unitPartMagus.EldritchArcherSpell}");
+                        spell = unitPartTouch.Ability.Data;
                     }
-                    else
+                }
+
+                UnitPartMagus unitPartMagus = unit.Get<UnitPartMagus>();
+                if (unitPartMagus != null && target.Unit != null)
+                {
+                    if (unitPartMagus.EldritchArcher)
                     {
-                        logger.Info($"EldritchArcherSpell = null");
-                    }
-
-                    UnitPartTouch unitPartTouch = __instance.Get<UnitPartTouch>();
-
-                    if (unitPartTouch == null)
-                    {
-                        logger.Info("Null unit part touch");
-                    }
-                    else
-                    {
-                        logger.Info("Getting ability data");
-
-                        Ability ability = unitPartTouch.Ability;
-
-                        if (ability != null)
+                        bool flag;
+                        if (unitPartMagus.EldritchArcherSpell == spell && unitPartMagus.Spellstrike.Active && unit.IsEnemy(target.Unit))
                         {
-                            AbilityData abilityData = ability.Data;
-
-                            if (abilityData != null)
-                            {
-                                logger.Info($"abilityData = {abilityData}");
-                                logger.Info($"IsSpellFromMagusSpellList = {unitPartMagus.IsSpellFromMagusSpellList(abilityData)}");
-                            }
-                            else
-                            {
-                                logger.Info("Null ability data");
-
-                            }
+                            ItemEntityWeapon firstWeapon = unit.GetFirstWeapon();
+                            flag = firstWeapon != null && firstWeapon.Blueprint.IsRanged;
                         }
                         else
                         {
-                            logger.Info("Ability = null");
+                            flag = false;
+                        }
+
+                        if (flag)
+                        {
+                            __result = new UnitAttack(target.Unit, null);
                         }
                     }
-                }
-                logger.Info("###############################");
 
+                    if (unitPartTouch != null
+                        && unitPartTouch.Ability.Data == spell
+                            && unitPartMagus.Spellstrike.Active
+                            && unitPartMagus.IsSpellFromMagusSpellList(unitPartTouch.Ability.Data)
+                            && unit.IsEnemy(target.Unit) && unit.GetThreatHand() != null
+                        )
+                    {
+                        __result = new UnitAttack(target.Unit, null);
+                    }
+                }
             }
         }
     }

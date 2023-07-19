@@ -32,31 +32,18 @@
     "enGB": "Isekai'd"
   },
   {
-    "Key": "Isekaid.BardClassLevels.Name",
+    "Key": "Isekaid.Transmigrator.Name",
     "ProcessTemplates": false,
-    "enGB": "Bard Infusion"
+    "enGB": "IsekaidTransmigrator"
   },
   {
-    "Key": "Isekaid.BardClassLevels.Description",
-    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a bard's song, allowing them to channel the same powers."
-  },
-  {
-    "Key": "Isekaid.DruidClassLevels.Name",
+    "Key": "Isekaid.Transmigrator.DisplayName",
     "ProcessTemplates": false,
-    "enGB": "Druid Infusion"
+    "enGB": "Transmigrator"
   },
   {
-    "Key": "Isekaid.DruidClassLevels.Description",
-    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a druid's connection to nature, allowing them to channel the same powers."
-  },
-  {
-    "Key": "Isekaid.MonkClassLevels.Name",
-    "ProcessTemplates": false,
-    "enGB": "Monk Infusion"
-  },
-  {
-    "Key": "Isekaid.MonkClassLevels.Description",
-    "enGB": "Upon transmigration, the Isekai'd is infused with a little bit of a monk's temparament, allowing them to utilze the same martial arts."
+    "Key": "Isekaid.Transmigrator.Description",
+    "enGB": "Upon transmigration, the Isekai'd is infused with the same power wielded by the mightiest champions of the world. They count their isekai'd level as their as their class level for all other classes except for Kineticist and Shifter for the purpose of qualifying for prerequisites.\nAdditionally, the isekai'd is able to wield the same power as those classes"
   },
   {
     "Key": "Isekaid.OtherworldlyInitiative.Name",
